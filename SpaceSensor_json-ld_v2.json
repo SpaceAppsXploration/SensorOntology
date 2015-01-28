@@ -1,0 +1,745 @@
+{
+    "@context": {
+        "owl"  :  "<http://www.w3.org/2002/07/owl#>",
+	"rdf"  :  "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+	"rdfs" :  "<http://www.w3.org/2000/01/rdf-schema#>", 
+	"xml"  :  "<http://www.w3.org/XML/1998/namespace>",
+	"xsd"  :  "<http://www.w3.org/2001/XMLSchema#>",
+	"@base":  "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-69"
+	},
+		
+    "@id": "owl:detector",
+    "@type": "owl:Ontology",
+    "defines":[
+	{	
+	     "@id": "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-69>",
+	     "@type": "owl:Ontology"
+	},
+	{
+	     "@id": "owl:detects",
+	     "@type": [
+	     		     "owl:AsymmetricProperty", 
+	    		     "owl:IrreflexiveProperty",
+	    		     "owl:ObjectProperty"
+	    		],
+	     "rdfs:comment": "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",	
+	     "rdf:domain": "owl:Detector", 
+	     "rdf:range": "owl:PhysicalEntity" 
+	},
+	{
+	     "@id": "owl:emits",
+	     "@type": [
+	     		     "owl:AsymmetricProperty", 
+	    		     "owl:IrreflexiveProperty",
+	    		     "owl:ObjectProperty"
+	    		],
+	     "rdfs:comment": "A relation between a Detector and a PhysicalEntity. The relation defines an \"active sensor\": if a sensor emits any particles or waves, which are backscattered and re-absorbed, then it is an \"active sensor\". The term \"emits\" implies therefore that the emitted physical entity is also reabsorbed by the same instrument. N.B. Active sensors should belong only to the family of instruments measuring properties of the electromagnetic spectrum. References for this assumption are: 1. http://www.nasa.gov/directorates/heo/scan/communications/outreach/funfacts/txt_passive_active.html#.VKA0MhAT1I; 2. http://www.seos-project.eu/modules/remotesensing/remotesensing-c02-p02.html",
+	     "rdfs:domain" : "owl:Detector",
+	     "rdfs:range"  : "owl:PhysicalEntity" 
+	},
+	{
+	     "@id": "owl:hasFieldOfResearch",
+	     "@type": "owl:ObjectProperty",
+	     "rdfs:label": "application",
+	     "rdfs:comment": "A relation between a Detector and FieldOfResearch. A detector is used for some research purpose, i.e. hasApplication in some FieldOfResearch. Examples of fields of research are: Determination of the elemental characteristics of a planet's surface; Dark Energy; Climate Change monitoring, etc...",
+	     "rdfs:domain": "owl:Detector",
+	     "rdfs:range": "owl:FieldOfResearch",
+	     "owl:inverseOf": "isResearchedBy" 
+	},
+	{
+	     "@id": "owl:hasOutput",
+	     "@type": [
+	     		     "owl:AsymmetricProperty", 
+	    		     "owl:IrreflexiveProperty",
+	    		     "owl:ObjectProperty"
+	    		],
+	     "rdfs:comment": "A relation between Detector and a Physical Quantity. Detectors give outputs which are then processed by the due electronics. Usual outputs are Physical Quantities such as varying voltages or current flows.",
+       
+       	     "rdfs:domain" : "owl:Detector",       
+       	     "rdfs:range"  : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id": "owl:hasWorkingPrinciple",
+	     "@type" : [ "owl:AsymmetricProperty" ,
+                         "owl:IrreflexiveProperty" ,
+                         "owl:ObjectProperty"
+                       ],
+                     
+             "rdfs:domain" : "owl:Detector",                     
+             "rdfs:range"  : "owl:DetectorWorkingPrinciple"
+        },
+        {
+             "@id"   : "owl:isEmittedBy",
+             "@type" : [ "owl:AsymmetricProperty"  ,
+                         "owl:IrreflexiveProperty" ,
+                         "owl:ObjectProperty"
+                       ],
+             
+             "rdfs:comment" : "A relation between a PhysicalEntity and a Detector. It is the inverse of the emits property. In case the detector is an active sensor, it \"fires\" something out, usually light, which is backscattered and absorbed. This \"something\", say, light, isEmittedBy the firing Detector",
+             
+             "rdfs:range"    : "owl:Detector",
+             "rdfs:domain"   : "owl:PhysicalEntity",
+             "owl:inverseOf" : "owl:emits" 
+        },
+        {
+             "@id"   :  "owl:isResearchedBy",
+             "@type" :  "owl:ObjectProperty",
+             "rdfs:comment": """A relation between FieldOfResearch and Detector. For every field of research given detectors are used. For Example, to look for pollutants in the Atmosphere (Earth Observation) spectrometers are used. To investigate the surface of celestial bodies ( Solar System Studies) spectrometers are used, but also dust detectors, ecc... THIS PROPRTY IS UNDER EVOLUTION.",
+                
+             "rdfs:range"  : "owl:Detector",
+             "rdfs:domain" : "owl:FieldOfResearch"
+        },
+        {
+             "@id"   : "owl:isTraversedBy",
+             "@type" : [ 
+             		 "owl:AsymmetricProperty" ,
+                         "owl:IrreflexiveProperty" ,
+                         "owl:ObjectProperty"
+                       ], 
+               
+             "rdfs:domain"        : "owl:Detector",
+             "rdfs:range"         : "owl:PhysicalEntity",
+             "rdfs:subPropertyOf" : "owl:detects"
+        },
+        {
+	     "@id"   : "owl:measures",
+	     "@type" : "owl:ObjectProperty",          
+             "rdfs:comment" : "A relation between the Detector and the PhysicalQuantity it measures. Examples of physical quantities can be: polarization, mass, electric charge, etc...",
+             
+             "rdf:domain" : "owl:Detector",
+             "rdfs:range" : "owl:PhysicalQuantity"
+        },
+        {
+            "@id"    : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD>",
+             "@type" : "owl:Class",     
+             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+        },
+        {
+             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot>", 
+             "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>"
+        },
+        {
+             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film>",
+             "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+        },
+        {
+             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>",
+             "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+             "rdfs:comment" : "Taken from the ontology : http://escience.rpi.edu/ontology/vsto/2/0/vsto_all.owl"
+     	},
+     	{
+     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>",
+     	     "@type" : "owl:Class",
+     	     "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+     	},
+     	{
+     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer>",
+     	     "@type" : "owl:Class",
+     	     "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>
+     	},
+     	{
+     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer>",
+     	     "@type" : "owl:Class",
+     	     "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+     	},
+	{
+	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar>",
+	     "@type" : "owl:Class",
+	     "rdfs:subClassOf" : [ 
+				     "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+                                     {
+					"@type" : "owl:Restriction",
+                                        "owl:onProperty" : "owl:emits",
+                                        "owl:someValuesFrom" : "owl:EMSpectrum"
+				     }
+                                 ]
+	}
+
+        {    
+             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer>",
+             "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+        },
+        {
+             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer>",
+             "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+	},
+
+	{
+	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+	},
+	{
+	     "@id"   : "<http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:DetectorWorkingPrinciple"
+	},
+	{
+	     "@id"   : "<http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl :DetectorWorkingPrinciple"
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#DustDetectors>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:Detector"
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>", 
+	     "@type" : "owl:Class",
+             "owl:equivalentClass" : { 
+				      "@type" : "owl:Class",
+				      "owl:intersectionOf" : [ 
+								 "owl:Detector",
+							         { 
+                                                                   "@type" : "owl:Restriction",
+                                                                   "owl:onProperty" : "owl:detects",
+                                                                   "owl:someValuesFrom" : "owl:EMSpectrum"
+                                                                 }
+                                                             ]
+                                                                                                                                 
+				     },
+             "rdfs:subClassOf" : {
+				     "@type" : "owl:Restriction",
+                                     "owl:onProperty" : "owl:isTraversedBy",
+                                     "owl:someValuesFrom" : "owl:PhysicalEntity"
+                                 },                                          
+             "rdfs:comment" : "Electromagnetic field instruments measure some physical property of incoming photons. (My definition)"
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#MassSpectrometer>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:Detector"
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : [
+					"<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+                                        {
+						"@type" : "owl:Class",
+						"owl:intersectionOf" : [ 
+									  "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+                                                                          {
+									     "@type" : "owl:Class",
+                                                                             "owl:complementOf" : "owl:ActiveInstrument"
+									  }
+                                                                       ]
+					}
+                                                                                                                                
+                                 ]
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : " <http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+	},
+	{
+	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Polarimeter>",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>", 
+	},
+	{
+	     "@id"   : "owl:ActiveInstrument",
+	     "@type" : "owl:Class",
+             "rdfs:label" :  "Active Instrument",
+	     "owl:equivalentClass": {		                       
+				        "@type" : "owl:Class",
+					"owl:intersectionOf" : [
+					                           "owl:Detector",
+								   { 
+								       "@type" : "owl:Restriction",
+								       "owl:onProperty" : "owl:emits",
+								       "owl:someValuesFrom" : "owl:PhysicalEntity"
+								   }
+                                                               ]
+                                       
+				    },	              
+             "rdfs:subClassOf" : "owl:Detector",
+             "owl:disjointWith" : "owl:PassiveInstrument",
+	     "rdfs:comment" : "An active instrument provides its own means of sensing the remote object. Typical of this would be a radar system.  Radar generates pulses of radio waves that it sends to a surface, and then receives their reflections back from the surface. Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory. http://www2.jpl.nasa.gov/basics/bsf12-1.php"
+	},
+	{
+
+	     "@id"   : "owl:AmountOfSubstance",
+	     "@type" : "owl:Class",                   
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Atom",
+	     "@type" : "owl:Class",
+	     "rdfs:subClassOf" : "owl:PhysicalEntity"
+	},
+	{
+	     "@id"   : "owl:Blue",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:Optical"
+	},
+	{
+	     "@id"   : "owl:CMOS",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : " <http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+	},
+	{
+	     "@id"   : "CosmicRays", 
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:Particle"
+	}
+
+
+{	
+	     "@id"   : "owl:DeepSpace",
+	     "@type" : "owl:Class",
+	     "rdfs:subClassOf" : "owl:FieldOfResearch"
+	},
+	{
+ 	     "@id"   : "owl:Detector",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : [ 
+				     {
+					"@type" : "owl:Restriction" ,
+                            		"owl:onProperty" : "owl:hasOutput" ,
+                            		"owl:someValuesFrom" : "owl:PhysicalQuantity"
+				     },
+                          	     { 
+					"@type" : "owl:Restriction" ,
+                            		"owl:onProperty" : "owl:measures" ,
+                            		"owl:someValuesFrom" : "owl:PhysicalQuantity"
+                          	     } ,
+                          	     { 
+					"@type" : "owl:Restriction" ,
+                            		"owl:onProperty" : "owl:hasWorkingPrinciple" ,
+                            		"owl:someValuesFrom" : "owl:DetectorWorkingPrinciple"
+                          	     } ,
+                          	     { 
+					"@type" : "owl:Restriction" ,
+                            		"owl:onProperty" : "owl:detects" ,
+                            		"owl:someValuesFrom" : "owl:PhysicalEntity"
+				     }
+                                 ] ,
+          
+          "rdfs:comment" :  "1) [Detector detects some PhysicalEntity] : Detectors are described as objects detecting some physical entity: elementary particles, light, atoms, cosimc dust, etc.  2) [Detector measures some PhysicalQuantity] : Detection of any physical entity entails that some physical quantity of the detected particle is measured: mass, charge, spin, velocity,... 3) [Detector hasWorkingPrinciple some DetectorWorkingPrinciple] : Detection is possible due to physical principles exploited ad hoc. For example, ionisation of charged particles within a solid state detector, used as a reversely biased diode, or electron emission due to the photoelectric effect. 4) [Detector hasOutput some PhysicalQuantity] : Detectors produce as output some physical quantity, most usually time-varying voltages, which are then read by the the readout electronics."
+	},
+	{	
+ 	     "@id"   : "owl:DetectorWorkingPrinciple" , 
+	     "@type" : "owl:Class" ,
+             "rdfs:comment" : "To be expanded" 
+	},
+	{
+	     "@id"   : "owl:DirectSensingInstrument" , 
+ 	     "@type" : "owl:Class" ,
+             "rdfs:label":  "Direct-Sensing Instrument" ,
+             "owl:equivalentClass" : { 
+					"@type" : "owl:Class" ,
+                                        "owl:intersectionOf" : [ "owl:Detector",
+                                                              	 { 
+								     "@type" : "owl:Class" ,
+                                                                     "owl:complementOf" :" owl:RemoteSensingInstrument"
+                                                                 }
+                                                               ] ,
+				     },
+				     
+             "owl:disjointWith" : "owl:RemoteSensingInstrument" ,
+             "rdfs:comment" :  "Direct-sensing instruments, also called contact science instruments, register characteristics of phenomena in their vicinity. (Source: \"Basic of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory, www.jpl.nasa.gov/basics/bsf12-1.php )" .
+	},
+	{
+ 	     "@id"   : "owl:Dust",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalEntity"
+	},
+	{
+	     "@id"   : "owl:EMSpectrum", 
+	     "@type" : "owl:Class" ,
+             "rdfs:comment" :  "I copied and pasted this class and its subclasses from some image file (.png) of an ontology which I cannot find again. It is important to find it again to give credits."
+	},
+	{
+ 	     "@id"   : "owl:EarthObservation",
+  	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:FieldOfResearch"
+	},
+	{
+ 	     "@id"   : "owl:ElectricCharge",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+	},
+	{
+ 	     "@id"   : "owl:ElectricCurrent", 
+ 	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:ElectricFieldStrength",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+	},
+	{
+	     "@id"   : "owl:ElectricPotential",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+	},
+	{
+ 	     "@id"   : "owl:ElectricalResistance", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+	},
+	{
+ 	     "@id"   : "owl:Energy",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:EnergyDensity",
+ 	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:ExtremeUltraViolet",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:EMSpectrum"
+	},
+	{
+ 	     "@id"   : "owl:FarInfrared", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:Infrared"
+	},
+	{
+ 	     "@id"   : "owl:FieldOfResearch",
+	     "@type" : "owl:Class" ,
+             "rdfs:comment" :  "This is just a first sketch. To be expanded."
+	},
+	{
+ 	     "@id"   : "owl:Force", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Frequency",
+ 	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:GammaRays", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:EMSpectrum"
+	},
+	{
+	     "@id"   : "owl:Heat",
+	     "@type" : "owl:Class" ,
+      	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:Impulse", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},	
+	{
+	     "@id"   : "owl:IndexOfRefraction",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Infrared", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:EMSpectrum"
+	},	
+	{
+	     "@id"   : "owl:InfraredRadiometer",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" :" owl:Radiometer"
+	},
+	{
+	     "@id"   : "owl:Length", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:LuminousIntensity",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:MagneticFieldStrength",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Magnetometer" , 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : [
+				     "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+                              	     { 
+					"@type" : "owl:Class" ,
+                                	"owl:intersectionOf" : [ 
+								 "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+                                                  		 {
+								   "@type" : "owl:Class" ,
+                                                    		   "owl:complementOf" : "owl:ActiveInstrument"
+                                                                 }
+                                                	       ]
+                                     }
+				 ] 
+
+	},
+	{
+ 	     "@id"   : "owl:Mass",
+	     "@type" : "owl:Class" ,
+      	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:MeanLifeTime",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Molecule", 
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:PhysicalEntity"
+	},
+	{
+	     "@id"   : "owl:NearInfrared",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" :"owl:Infrared"
+	},
+	{
+	     "@id"   : "owl:Optical", 
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:EMSpectrum"
+	},
+	{
+	     "@id"   : "owl:Particle",
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:PhysicalEntity" 
+	},
+	{
+	     "@id"   : "owl:PassiveInstrument",
+	     "@type" : "owl:Class",
+             "rdfs:label" :  "Passive Instrument",
+             "owl:equivalentClass" :  { 
+					"@type" : "owl:Class" ,
+                                      	"owl:intersectionOf" : [ 
+								 "owl:Detector",
+                                                        	 {
+								     "@type" : "owl:Class" ,
+                                                          	     "owl:complementOf" : "owl:ActiveInstrument"
+                                                                 }
+                                                               ]
+                                      },
+             "rdfs:subClassOf" :  "owl:Detector",
+             "rdfs:comment" :  "Most instruments only receive and process existing light, particles, or other phenomena, and they are said to be passive. Typical of this type would be an imaging instrument viewing a planet that is illuminated by sunlight, or a magnetometer measuring existing magnetic fields. Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory. http://www2.jpl.nasa.gov/basics/bsf12-1.php"
+	},
+	{
+	      "@id"   : "owl:PhotoElectronIonization",
+              "@type" : "owl:Class" ,
+              "rdfs:subClassOf" :" <http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization>"
+	},
+	{
+ 	     "@id"   : "owl:PhysicalEntity", 
+	     "@type" : "owl:Class" ,
+             "rdfs:comment" :  "Physical Entities are what is sensed by a detector. They can be atoms, ions, elementary particles, light, molecules, etc..."
+	},
+	{
+	     "@id"   : "owl:PhysicalQuantity", 
+             "@type" : "owl:Class" ,
+             "rdfs:comment" :  "A physical quantity (or \"physical magnitude\") is a physical property of a phenomenon, body, or substance, that can be quantified by measurement. Source: Wikipedia, http://en.wikipedia.org/wiki/Physical_quantity"
+	},
+	{
+	     "@id"   : "owl:Plasma",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalEntity"
+	},
+	{
+ 	     "@id"   : "owl:Power", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Pressure", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Radio", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:EMSpectrum" 
+	},
+	{
+	     "@id"   : "owl:RadioCentrimetric",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" :  "owl:Radio"
+
+	},
+	{
+	     "@id"   : "owl:RadioMetric",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" :  "owl:Radio"
+	},
+	{
+	     "@id"   : "owl:RadioMillimetric",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" :  "owl:Radio"
+	},
+	{
+	     "@id"   : "owl:RadioSubMillimetric",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" :  "owl:Radio"
+	},	
+	{
+ 	     "@id"   : "owl:Radiometer", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+	},
+	{
+ 	     "@id"   : "owl:Red",
+	     "@type" : "owl:Class" ,
+	     "rdfs:subClassOf" :  "owl:Optical"
+	},
+	{
+	     "@id"   : "owl:RemoteSensingInstrument",
+	     "@type" : "owl:Class" ,
+             "rdfs:label":  "Remote-Sensing Instrument" ,
+             "owl:equivalentClass" : {				
+				         "@type" : "owl:Class",
+                                         "owl:intersectionOf" : [ 
+								   "owl:Detector",
+                                                              	   { 
+								        "@type" : "owl:Restriction" ,
+                                                                	"owl:onProperty" : "owl:isTraversedBy" ,
+                                                                	"owl:someValuesFrom" "owl:PhysicalEntity"
+                                                              	   }
+                                                                 ]
+                                     } ,
+             "rdfs:comment" :  "Remote-sensing instruments exist to form some kind of image or characterization of the source of the phenomena that enter the instrument. In doing so, they record characteristics of objects at a distance, sometimes forming an image by gathering, focusing and recording light. (Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory, www.jpl.nasa.gov/basics/bsf12-1.php)"
+	},
+	{
+	     "@id"   : "owl:SolarSystem", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:FieldOfResearch"
+	},
+	{
+	     "@id"   : "owl:Spectrograph",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:SpectroscopicInstrument"
+	},
+	{
+	     "@id"   : "owl:Spectrometer", 
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:SpectroscopicInstrument" 
+	},
+	{
+	     "@id"   : "owl:SpectroscopicInstrument", 
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+	},
+	{
+	     "@id"   : "owl:Spin",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+	},
+	{
+	     "@id"   : "owl:Temperature",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Time",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:UltraViolet",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:EMSpectrum"
+	},	
+	{
+	     "@id"   : "owl:UtlravioletRadiometer",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:Radiometer"
+	},
+	{
+	     "@id"   : "owl:Velocity", 
+	     "@type" : "owl:Class",
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+ 	     "@id"   : "owl:Volume",
+	     "@type" : "owl:Class" ,
+	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:Wavelength",
+	     "@type" : "owl:Class" ,
+             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	},
+	{
+	     "@id"   : "owl:XRays",
+	     "@type" : "owl:Class" ,
+	     "rdfs:subClassOf" : "owl:EMSpectrum"
+	},
+	{
+ 	     "@id"   : "owl:ion", 
+	     "@type" : "owl:Class" ,
+	     "rdfs:subClassOf" :  "owl:Atom"
+	},
+	{
+ 	     "@id"   : "owl:isotope", 
+	     "@type" : "owl:Class" ,
+	     "rdfs:subClassOf" :  "owl:Atom"
+	},
+	{
+	     "@id"   : "owl:Electron", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "owl:Particle"
+		       ]
+	},
+	{
+ 	     "@id"   : "owl:Neutrino", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "owl:Particle"
+		       ]
+	},
+	{
+	     "@id"   : "owl:Neutron", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "owl:Particle"
+		       ]
+
+	},
+	{
+	     "@id"   : "owl:Photon", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "owl:Particle"
+		       ]
+
+	},
+	{
+ 	     "@id"   : "owl:Proton", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "owl:Particle"
+		       ]
+
+	},
+	{
+	     "@type" : "owl:AllDisjointProperties" ,
+  	     "owl:members" : [ 
+		                 "owl:detects",
+             			 "owl:emits",
+             			 "owl:hasFieldOfResearch",
+              			 "owl:hasOutput",
+			         "owl:isEmittedBy",
+             			 "owl:isResearchedBy",
+             	                 "owl:measures"
+                             ]
+	}
+    ]	
+}
+	   
