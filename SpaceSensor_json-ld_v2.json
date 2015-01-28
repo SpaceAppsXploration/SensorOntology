@@ -1,53 +1,54 @@
 {
     "@context": {
-        "owl"  :  "<http://www.w3.org/2002/07/owl#>",
-	"rdf"  :  "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
-	"rdfs" :  "<http://www.w3.org/2000/01/rdf-schema#>", 
-	"xml"  :  "<http://www.w3.org/XML/1998/namespace>",
-	"xsd"  :  "<http://www.w3.org/2001/XMLSchema#>",
-	"@base":  "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-69"
+        "@base": "http://projectchronos.eu/ontology/sensors",
+        "owl"  :  "http://www.w3.org/2002/07/owl#",
+    	"rdf"  :  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    	"rdfs" :  "http://www.w3.org/2000/01/rdf-schema#", 
+    	"xml"  :  "http://www.w3.org/XML/1998/namespace",
+    	"xsd"  :  "http://www.w3.org/2001/XMLSchema#",
+    	"sensor":  "http://projectchronos.eu/ontology/sensors/"
 	},
 		
-    "@id": "owl:detector",
+    "@id": "",
     "@type": "owl:Ontology",
     "defines":[
 	{	
-	     "@id": "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-69>",
+	     "@id": "",
 	     "@type": "owl:Ontology"
 	},
 	{
-	     "@id": "owl:detects",
+	     "@id": "http://projectchronos.eu/ontology/sensors/detects",
 	     "@type": [
 	     		     "owl:AsymmetricProperty", 
 	    		     "owl:IrreflexiveProperty",
 	    		     "owl:ObjectProperty"
 	    		],
 	     "rdfs:comment": "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",	
-	     "rdf:domain": "owl:Detector", 
-	     "rdf:range": "owl:PhysicalEntity" 
+	     "rdf:domain": "http://projectchronos.eu/ontology/sensors/Detector", 
+	     "rdf:range": "http://projectchronos.eu/ontology/sensors/PhysicalEntity" 
 	},
 	{
-	     "@id": "owl:emits",
+	     "@id": "http://projectchronos.eu/ontology/sensors/emits",
 	     "@type": [
 	     		     "owl:AsymmetricProperty", 
 	    		     "owl:IrreflexiveProperty",
 	    		     "owl:ObjectProperty"
 	    		],
 	     "rdfs:comment": "A relation between a Detector and a PhysicalEntity. The relation defines an \"active sensor\": if a sensor emits any particles or waves, which are backscattered and re-absorbed, then it is an \"active sensor\". The term \"emits\" implies therefore that the emitted physical entity is also reabsorbed by the same instrument. N.B. Active sensors should belong only to the family of instruments measuring properties of the electromagnetic spectrum. References for this assumption are: 1. http://www.nasa.gov/directorates/heo/scan/communications/outreach/funfacts/txt_passive_active.html#.VKA0MhAT1I; 2. http://www.seos-project.eu/modules/remotesensing/remotesensing-c02-p02.html",
-	     "rdfs:domain" : "owl:Detector",
-	     "rdfs:range"  : "owl:PhysicalEntity" 
+	     "rdfs:domain" : "http://projectchronos.eu/ontology/sensors/Detector",
+	     "rdfs:range"  : "http://projectchronos.eu/ontology/sensors/PhysicalEntity" 
 	},
 	{
-	     "@id": "owl:hasFieldOfResearch",
+	     "@id": "http://projectchronos.eu/ontology/sensors/hasFieldOfResearch",
 	     "@type": "owl:ObjectProperty",
 	     "rdfs:label": "application",
 	     "rdfs:comment": "A relation between a Detector and FieldOfResearch. A detector is used for some research purpose, i.e. hasApplication in some FieldOfResearch. Examples of fields of research are: Determination of the elemental characteristics of a planet's surface; Dark Energy; Climate Change monitoring, etc...",
-	     "rdfs:domain": "owl:Detector",
-	     "rdfs:range": "owl:FieldOfResearch",
-	     "owl:inverseOf": "isResearchedBy" 
+	     "rdfs:domain": "http://projectchronos.eu/ontology/sensors/Detector",
+	     "rdfs:range": "http://projectchronos.eu/ontology/sensors/FieldOfResearch",
+	     "owl:inverseOf": "http://projectchronos.eu/ontology/sensors/isResearchedBy" 
 	},
 	{
-	     "@id": "owl:hasOutput",
+	     "@id": "http://projectchronos.eu/ontology/sensors/hasOutput",
 	     "@type": [
 	     		     "owl:AsymmetricProperty", 
 	    		     "owl:IrreflexiveProperty",
@@ -55,8 +56,8 @@
 	    		],
 	     "rdfs:comment": "A relation between Detector and a Physical Quantity. Detectors give outputs which are then processed by the due electronics. Usual outputs are Physical Quantities such as varying voltages or current flows.",
        
-       	     "rdfs:domain" : "owl:Detector",       
-       	     "rdfs:range"  : "owl:PhysicalQuantity"
+       	     "rdfs:domain" : "http://projectchronos.eu/ontology/sensors/Detector",       
+       	     "rdfs:range"  : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
 	     "@id": "owl:hasWorkingPrinciple",
@@ -65,11 +66,11 @@
                          "owl:ObjectProperty"
                        ],
                      
-             "rdfs:domain" : "owl:Detector",                     
-             "rdfs:range"  : "owl:DetectorWorkingPrinciple"
+             "rdfs:domain" : "http://projectchronos.eu/ontology/sensors/Detector",                     
+             "rdfs:range"  : "http://projectchronos.eu/ontology/sensors/DetectorWorkingPrinciple"
         },
         {
-             "@id"   : "owl:isEmittedBy",
+             "@id"   : "http://projectchronos.eu/ontology/sensors/isEmittedBy",
              "@type" : [ "owl:AsymmetricProperty"  ,
                          "owl:IrreflexiveProperty" ,
                          "owl:ObjectProperty"
@@ -77,157 +78,157 @@
              
              "rdfs:comment" : "A relation between a PhysicalEntity and a Detector. It is the inverse of the emits property. In case the detector is an active sensor, it \"fires\" something out, usually light, which is backscattered and absorbed. This \"something\", say, light, isEmittedBy the firing Detector",
              
-             "rdfs:range"    : "owl:Detector",
-             "rdfs:domain"   : "owl:PhysicalEntity",
-             "owl:inverseOf" : "owl:emits" 
+             "rdfs:range"    : "http://projectchronos.eu/ontology/sensors/Detector",
+             "rdfs:domain"   : "http://projectchronos.eu/ontology/sensors/PhysicalEntity",
+             "owl:inverseOf" : "http://projectchronos.eu/ontology/sensors/emits" 
         },
         {
-             "@id"   :  "owl:isResearchedBy",
-             "@type" :  "owl:ObjectProperty",
+             "@id"   :  "http://projectchronos.eu/ontology/sensors/isResearchedBy",
+             "@type" :  "http://projectchronos.eu/ontology/sensors/ObjectProperty",
              "rdfs:comment": """A relation between FieldOfResearch and Detector. For every field of research given detectors are used. For Example, to look for pollutants in the Atmosphere (Earth Observation) spectrometers are used. To investigate the surface of celestial bodies ( Solar System Studies) spectrometers are used, but also dust detectors, ecc... THIS PROPRTY IS UNDER EVOLUTION.",
                 
-             "rdfs:range"  : "owl:Detector",
-             "rdfs:domain" : "owl:FieldOfResearch"
+             "rdfs:range"  : "http://projectchronos.eu/ontology/sensors/Detector",
+             "rdfs:domain" : "http://projectchronos.eu/ontology/sensors/FieldOfResearch"
         },
         {
-             "@id"   : "owl:isTraversedBy",
+             "@id"   : "http://projectchronos.eu/ontology/sensors/isTraversedBy",
              "@type" : [ 
              		 "owl:AsymmetricProperty" ,
                          "owl:IrreflexiveProperty" ,
                          "owl:ObjectProperty"
                        ], 
                
-             "rdfs:domain"        : "owl:Detector",
-             "rdfs:range"         : "owl:PhysicalEntity",
-             "rdfs:subPropertyOf" : "owl:detects"
+             "rdfs:domain"        : "http://projectchronos.eu/ontology/sensors/Detector",
+             "rdfs:range"         : "http://projectchronos.eu/ontology/sensors/PhysicalEntity",
+             "rdfs:subPropertyOf" : "http://projectchronos.eu/ontology/sensors/detects"
         },
         {
-	     "@id"   : "owl:measures",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/measures",
 	     "@type" : "owl:ObjectProperty",          
              "rdfs:comment" : "A relation between the Detector and the PhysicalQuantity it measures. Examples of physical quantities can be: polarization, mass, electric charge, etc...",
              
-             "rdf:domain" : "owl:Detector",
-             "rdfs:range" : "owl:PhysicalQuantity"
+             "rdf:domain" : "http://projectchronos.eu/ontology/sensors/Detector",
+             "rdfs:range" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
         },
         {
-            "@id"    : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD>",
+            "@id"    : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD",
              "@type" : "owl:Class",     
-             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+             "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
         },
         {
-             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot>", 
+             "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot", 
              "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>"
+             "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
         },
         {
-             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film>",
+             "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film",
              "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+             "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
         },
         {
-             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>",
+             "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
              "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMFieldInstrument",
              "rdfs:comment" : "Taken from the ontology : http://escience.rpi.edu/ontology/vsto/2/0/vsto_all.owl"
      	},
      	{
-     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>",
+     	     "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
      	     "@type" : "owl:Class",
-     	     "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+     	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/#OpticalInstrument"
      	},
      	{
-     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer>",
+     	     "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer",
      	     "@type" : "owl:Class",
-     	     "rdfs:subClassOf" : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer>
+     	     "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
      	},
      	{
-     	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer>",
+     	     "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer",
      	     "@type" : "owl:Class",
-     	     "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+     	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Photometer"
      	},
 	{
-	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar>",
+	     "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar",
 	     "@type" : "owl:Class",
 	     "rdfs:subClassOf" : [ 
-				     "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+				     "http://projectchronos.eu/ontology/sensors/EMFieldInstrument",
                                      {
-					"@type" : "owl:Restriction",
-                                        "owl:onProperty" : "owl:emits",
-                                        "owl:someValuesFrom" : "owl:EMSpectrum"
+					                   "@type" : "owl:Restriction",
+                                        "owl:onProperty" : "http://projectchronos.eu/ontology/sensors/emits",
+                                        "owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 				     }
                                  ]
 	}
 
         {    
-             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer>",
+             "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
              "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Photometer"
         },
         {
-             "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer>",
+             "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer",
              "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Photometer"
 	},
 
 	{
-	     "@id"   : "<http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope>",
+	     "@id"   : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/OpticalInstrument"
 	},
 	{
-	     "@id"   : "<http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization>",
+	     "@id"   : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization",
 	     "@type" : "owl:Class",
              "rdfs:subClassOf" : "owl:DetectorWorkingPrinciple"
 	},
 	{
-	     "@id"   : "<http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction>",
+	     "@id"   : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction",
 	     "@type" : "owl:Class",
              "rdfs:subClassOf" : "owl :DetectorWorkingPrinciple"
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#DustDetectors>",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/DustDetectors",
 	     "@type" : "owl:Class",
              "rdfs:subClassOf" : "owl:Detector"
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/EMFieldInstrument", 
 	     "@type" : "owl:Class",
              "owl:equivalentClass" : { 
 				      "@type" : "owl:Class",
 				      "owl:intersectionOf" : [ 
-								 "owl:Detector",
+								 "sensor:Detector",
 							         { 
                                                                    "@type" : "owl:Restriction",
-                                                                   "owl:onProperty" : "owl:detects",
-                                                                   "owl:someValuesFrom" : "owl:EMSpectrum"
+                                                                   "owl:onProperty" : "http://projectchronos.eu/ontology/sensors/detects",
+                                                                   "owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
                                                                  }
                                                              ]
                                                                                                                                  
 				     },
              "rdfs:subClassOf" : {
 				     "@type" : "owl:Restriction",
-                                     "owl:onProperty" : "owl:isTraversedBy",
-                                     "owl:someValuesFrom" : "owl:PhysicalEntity"
+                                     "owl:onProperty" : "http://projectchronos.eu/ontology/sensors/isTraversedBy",
+                                     "owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
                                  },                                          
              "rdfs:comment" : "Electromagnetic field instruments measure some physical property of incoming photons. (My definition)"
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#MassSpectrometer>",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/MassSpectrometer",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:Detector"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Detector"
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/OpticalInstrument",
 	     "@type" : "owl:Class",
              "rdfs:subClassOf" : [
-					"<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+					"http://projectchronos.eu/ontology/sensors/EMFieldInstrument" ,
                                         {
 						"@type" : "owl:Class",
 						"owl:intersectionOf" : [ 
-									  "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>",
+									  "http://projectchronos.eu/ontology/sensors/EMFieldInstrument",
                                                                           {
 									     "@type" : "owl:Class",
-                                                                             "owl:complementOf" : "owl:ActiveInstrument"
+                                                                             "owl:complementOf" : "http://projectchronos.eu/ontology/sensors/ActiveInstrument"
 									  }
                                                                        ]
 					}
@@ -235,250 +236,250 @@
                                  ]
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Photometer>",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Photometer",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : " <http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/OpticalInstrument"
 	},
 	{
-	     "@id"   : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#Polarimeter>",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Polarimeter",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>", 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/OpticalInstrument", 
 	},
 	{
-	     "@id"   : "owl:ActiveInstrument",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/ActiveInstrument",
 	     "@type" : "owl:Class",
              "rdfs:label" :  "Active Instrument",
 	     "owl:equivalentClass": {		                       
 				        "@type" : "owl:Class",
 					"owl:intersectionOf" : [
-					                           "owl:Detector",
+					                           "http://projectchronos.eu/ontology/sensors/Detector",
 								   { 
 								       "@type" : "owl:Restriction",
-								       "owl:onProperty" : "owl:emits",
-								       "owl:someValuesFrom" : "owl:PhysicalEntity"
+								       "owl:onProperty" : "http://projectchronos.eu/ontology/sensors/emits",
+								       "owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 								   }
                                                                ]
                                        
 				    },	              
-             "rdfs:subClassOf" : "owl:Detector",
-             "owl:disjointWith" : "owl:PassiveInstrument",
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Detector",
+             "owl:disjointWith" : "http://projectchronos.eu/ontology/sensors/PassiveInstrument",
 	     "rdfs:comment" : "An active instrument provides its own means of sensing the remote object. Typical of this would be a radar system.  Radar generates pulses of radio waves that it sends to a surface, and then receives their reflections back from the surface. Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory. http://www2.jpl.nasa.gov/basics/bsf12-1.php"
 	},
 	{
 
-	     "@id"   : "owl:AmountOfSubstance",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/AmountOfSubstance",
 	     "@type" : "owl:Class",                   
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Atom",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Atom",
 	     "@type" : "owl:Class",
-	     "rdfs:subClassOf" : "owl:PhysicalEntity"
+	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 	},
 	{
-	     "@id"   : "owl:Blue",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Blue",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:Optical"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Optical"
 	},
 	{
-	     "@id"   : "owl:CMOS",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/CMOS",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : " <http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector>"
+             "rdfs:subClassOf" : " http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
 	},
 	{
-	     "@id"   : "CosmicRays", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/CosmicRays", 
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:Particle"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Particle"
 	}
 
 
 {	
-	     "@id"   : "owl:DeepSpace",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/DeepSpace",
 	     "@type" : "owl:Class",
-	     "rdfs:subClassOf" : "owl:FieldOfResearch"
+	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/FieldOfResearch"
 	},
 	{
- 	     "@id"   : "owl:Detector",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Detector",
 	     "@type" : "owl:Class" ,
              "rdfs:subClassOf" : [ 
 				     {
 					"@type" : "owl:Restriction" ,
-                            		"owl:onProperty" : "owl:hasOutput" ,
-                            		"owl:someValuesFrom" : "owl:PhysicalQuantity"
+                            		"owl:onProperty" : "http://projectchronos.eu/ontology/sensors/hasOutput" ,
+                            		"owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 				     },
                           	     { 
 					"@type" : "owl:Restriction" ,
-                            		"owl:onProperty" : "owl:measures" ,
-                            		"owl:someValuesFrom" : "owl:PhysicalQuantity"
+                            		"owl:onProperty" : "http://projectchronos.eu/ontology/sensors/measures" ,
+                            		"owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
                           	     } ,
                           	     { 
 					"@type" : "owl:Restriction" ,
-                            		"owl:onProperty" : "owl:hasWorkingPrinciple" ,
-                            		"owl:someValuesFrom" : "owl:DetectorWorkingPrinciple"
+                            		"owl:onProperty" : "http://projectchronos.eu/ontology/sensors/hasWorkingPrinciple" ,
+                            		"owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/DetectorWorkingPrinciple"
                           	     } ,
                           	     { 
 					"@type" : "owl:Restriction" ,
-                            		"owl:onProperty" : "owl:detects" ,
-                            		"owl:someValuesFrom" : "owl:PhysicalEntity"
+                            		"owl:onProperty" : "http://projectchronos.eu/ontology/sensors/detects" ,
+                            		"owl:someValuesFrom" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 				     }
                                  ] ,
           
           "rdfs:comment" :  "1) [Detector detects some PhysicalEntity] : Detectors are described as objects detecting some physical entity: elementary particles, light, atoms, cosimc dust, etc.  2) [Detector measures some PhysicalQuantity] : Detection of any physical entity entails that some physical quantity of the detected particle is measured: mass, charge, spin, velocity,... 3) [Detector hasWorkingPrinciple some DetectorWorkingPrinciple] : Detection is possible due to physical principles exploited ad hoc. For example, ionisation of charged particles within a solid state detector, used as a reversely biased diode, or electron emission due to the photoelectric effect. 4) [Detector hasOutput some PhysicalQuantity] : Detectors produce as output some physical quantity, most usually time-varying voltages, which are then read by the the readout electronics."
 	},
 	{	
- 	     "@id"   : "owl:DetectorWorkingPrinciple" , 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/DetectorWorkingPrinciple" , 
 	     "@type" : "owl:Class" ,
              "rdfs:comment" : "To be expanded" 
 	},
 	{
-	     "@id"   : "owl:DirectSensingInstrument" , 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/DirectSensingInstrument" , 
  	     "@type" : "owl:Class" ,
              "rdfs:label":  "Direct-Sensing Instrument" ,
              "owl:equivalentClass" : { 
 					"@type" : "owl:Class" ,
-                                        "owl:intersectionOf" : [ "owl:Detector",
+                                        "owl:intersectionOf" : [ "sensor:Detector",
                                                               	 { 
 								     "@type" : "owl:Class" ,
-                                                                     "owl:complementOf" :" owl:RemoteSensingInstrument"
+                                                                     "owl:complementOf" :"http://projectchronos.eu/ontology/sensors/RemoteSensingInstrument"
                                                                  }
                                                                ] ,
 				     },
 				     
-             "owl:disjointWith" : "owl:RemoteSensingInstrument" ,
+             "owl:disjointWith" : "http://projectchronos.eu/ontology/sensors/RemoteSensingInstrument" ,
              "rdfs:comment" :  "Direct-sensing instruments, also called contact science instruments, register characteristics of phenomena in their vicinity. (Source: \"Basic of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory, www.jpl.nasa.gov/basics/bsf12-1.php )" .
 	},
 	{
- 	     "@id"   : "owl:Dust",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Dust",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalEntity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 	},
 	{
-	     "@id"   : "owl:EMSpectrum", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/EMSpectrum", 
 	     "@type" : "owl:Class" ,
              "rdfs:comment" :  "I copied and pasted this class and its subclasses from some image file (.png) of an ontology which I cannot find again. It is important to find it again to give credits."
 	},
 	{
- 	     "@id"   : "owl:EarthObservation",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/EarthObservation",
   	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:FieldOfResearch"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/FieldOfResearch"
 	},
 	{
- 	     "@id"   : "owl:ElectricCharge",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/ElectricCharge",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity" 
 	},
 	{
- 	     "@id"   : "owl:ElectricCurrent", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/ElectricCurrent", 
  	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:ElectricFieldStrength",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/ElectricFieldStrength",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity" 
 	},
 	{
-	     "@id"   : "owl:ElectricPotential",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/ElectricPotential",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity" 
 	},
 	{
- 	     "@id"   : "owl:ElectricalResistance", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/ElectricalResistance", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity" 
 	},
 	{
- 	     "@id"   : "owl:Energy",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Energy",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:EnergyDensity",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/EnergyDensity",
  	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:ExtremeUltraViolet",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/ExtremeUltraViolet",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:EMSpectrum"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},
 	{
- 	     "@id"   : "owl:FarInfrared", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/FarInfrared", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:Infrared"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Infrared"
 	},
 	{
- 	     "@id"   : "owl:FieldOfResearch",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/FieldOfResearch",
 	     "@type" : "owl:Class" ,
              "rdfs:comment" :  "This is just a first sketch. To be expanded."
 	},
 	{
- 	     "@id"   : "owl:Force", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Force", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Frequency",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Frequency",
  	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:GammaRays", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/GammaRays", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:EMSpectrum"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},
 	{
-	     "@id"   : "owl:Heat",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Heat",
 	     "@type" : "owl:Class" ,
-      	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+      	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:Impulse", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Impulse", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},	
 	{
-	     "@id"   : "owl:IndexOfRefraction",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/IndexOfRefraction",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Infrared", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Infrared", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:EMSpectrum"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},	
 	{
-	     "@id"   : "owl:InfraredRadiometer",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/InfraredRadiometer",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" :" owl:Radiometer"
+             "rdfs:subClassOf" :"http://projectchronos.eu/ontology/sensors/Radiometer"
 	},
 	{
-	     "@id"   : "owl:Length", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Length", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:LuminousIntensity",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/LuminousIntensity",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:MagneticFieldStrength",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/MagneticFieldStrength",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Magnetometer" , 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Magnetometer" , 
 	     "@type" : "owl:Class" ,
              "rdfs:subClassOf" : [
-				     "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+				     "http://projectchronos.eu/ontology/sensors/EMFieldInstrument" ,
                               	     { 
 					"@type" : "owl:Class" ,
                                 	"owl:intersectionOf" : [ 
-								 "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#EMFieldInstrument>" ,
+								 "http://projectchronos.eu/ontology/sensors/EMFieldInstrument" ,
                                                   		 {
 								   "@type" : "owl:Class" ,
-                                                    		   "owl:complementOf" : "owl:ActiveInstrument"
+                                                    		   "owl:complementOf" : "http://projectchronos.eu/ontology/sensors/ActiveInstrument"
                                                                  }
                                                 	       ]
                                      }
@@ -486,258 +487,258 @@
 
 	},
 	{
- 	     "@id"   : "owl:Mass",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Mass",
 	     "@type" : "owl:Class" ,
-      	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+      	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:MeanLifeTime",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/MeanLifeTime",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Molecule", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Molecule", 
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:PhysicalEntity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 	},
 	{
-	     "@id"   : "owl:NearInfrared",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/NearInfrared",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" :"owl:Infrared"
+             "rdfs:subClassOf" :"http://projectchronos.eu/ontology/sensors/Infrared"
 	},
 	{
-	     "@id"   : "owl:Optical", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Optical", 
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:EMSpectrum"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},
 	{
-	     "@id"   : "owl:Particle",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Particle",
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:PhysicalEntity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity" 
 	},
 	{
-	     "@id"   : "owl:PassiveInstrument",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/PassiveInstrument",
 	     "@type" : "owl:Class",
              "rdfs:label" :  "Passive Instrument",
              "owl:equivalentClass" :  { 
 					"@type" : "owl:Class" ,
                                       	"owl:intersectionOf" : [ 
-								 "owl:Detector",
+								 "http://projectchronos.eu/ontology/sensors/Detector",
                                                         	 {
 								     "@type" : "owl:Class" ,
-                                                          	     "owl:complementOf" : "owl:ActiveInstrument"
+                                                          	     "owl:complementOf" : "http://projectchronos.eu/ontology/sensors/ActiveInstrument"
                                                                  }
                                                                ]
                                       },
-             "rdfs:subClassOf" :  "owl:Detector",
+             "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Detector",
              "rdfs:comment" :  "Most instruments only receive and process existing light, particles, or other phenomena, and they are said to be passive. Typical of this type would be an imaging instrument viewing a planet that is illuminated by sunlight, or a magnetometer measuring existing magnetic fields. Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory. http://www2.jpl.nasa.gov/basics/bsf12-1.php"
 	},
 	{
-	      "@id"   : "owl:PhotoElectronIonization",
+	      "@id"   : "http://projectchronos.eu/ontology/sensors/PhotoElectronIonization",
               "@type" : "owl:Class" ,
-              "rdfs:subClassOf" :" <http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization>"
+              "rdfs:subClassOf" :" http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization"
 	},
 	{
- 	     "@id"   : "owl:PhysicalEntity", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/PhysicalEntity", 
 	     "@type" : "owl:Class" ,
              "rdfs:comment" :  "Physical Entities are what is sensed by a detector. They can be atoms, ions, elementary particles, light, molecules, etc..."
 	},
 	{
-	     "@id"   : "owl:PhysicalQuantity", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity", 
              "@type" : "owl:Class" ,
              "rdfs:comment" :  "A physical quantity (or \"physical magnitude\") is a physical property of a phenomenon, body, or substance, that can be quantified by measurement. Source: Wikipedia, http://en.wikipedia.org/wiki/Physical_quantity"
 	},
 	{
-	     "@id"   : "owl:Plasma",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Plasma",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalEntity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
 	},
 	{
- 	     "@id"   : "owl:Power", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Power", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Pressure", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Pressure", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Radio", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Radio", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:EMSpectrum" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum" 
 	},
 	{
-	     "@id"   : "owl:RadioCentrimetric",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/RadioCentrimetric",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" :  "owl:Radio"
+             "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Radio"
 
 	},
 	{
 	     "@id"   : "owl:RadioMetric",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" :  "owl:Radio"
+             "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/"
 	},
 	{
-	     "@id"   : "owl:RadioMillimetric",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/RadioMillimetric",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" :  "owl:Radio"
+             "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Radio"
 	},
 	{
-	     "@id"   : "owl:RadioSubMillimetric",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/RadioSubMillimetric",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" :  "owl:Radio"
+             "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Radio"
 	},	
 	{
- 	     "@id"   : "owl:Radiometer", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Radiometer", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/OpticalInstrument"
 	},
 	{
- 	     "@id"   : "owl:Red",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Red",
 	     "@type" : "owl:Class" ,
-	     "rdfs:subClassOf" :  "owl:Optical"
+	     "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Optical"
 	},
 	{
-	     "@id"   : "owl:RemoteSensingInstrument",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/RemoteSensingInstrument",
 	     "@type" : "owl:Class" ,
              "rdfs:label":  "Remote-Sensing Instrument" ,
              "owl:equivalentClass" : {				
 				         "@type" : "owl:Class",
                                          "owl:intersectionOf" : [ 
-								   "owl:Detector",
+								   "http://projectchronos.eu/ontology/sensors/Detector",
                                                               	   { 
 								        "@type" : "owl:Restriction" ,
-                                                                	"owl:onProperty" : "owl:isTraversedBy" ,
-                                                                	"owl:someValuesFrom" "owl:PhysicalEntity"
+                                                                	"owl:onProperty" : "http://projectchronos.eu/ontology/sensors/isTraversedBy" ,
+                                                                	"owl:someValuesFrom" "http://projectchronos.eu/ontology/sensors/PhysicalEntity"
                                                               	   }
                                                                  ]
                                      } ,
              "rdfs:comment" :  "Remote-sensing instruments exist to form some kind of image or characterization of the source of the phenomena that enter the instrument. In doing so, they record characteristics of objects at a distance, sometimes forming an image by gathering, focusing and recording light. (Source: \"Basics of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory, www.jpl.nasa.gov/basics/bsf12-1.php)"
 	},
 	{
-	     "@id"   : "owl:SolarSystem", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/SolarSystem", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:FieldOfResearch"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/FieldOfResearch"
 	},
 	{
-	     "@id"   : "owl:Spectrograph",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Spectrograph",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:SpectroscopicInstrument"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/SpectroscopicInstrument"
 	},
 	{
-	     "@id"   : "owl:Spectrometer", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Spectrometer", 
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:SpectroscopicInstrument" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/SpectroscopicInstrument" 
 	},
 	{
-	     "@id"   : "owl:SpectroscopicInstrument", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/SpectroscopicInstrument", 
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "<http://www.semanticweb.org/jacopo/ontologies/2014/11/untitled-ontology-66#OpticalInstrument>"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/OpticalInstrument"
 	},
 	{
-	     "@id"   : "owl:Spin",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Spin",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity" 
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity" 
 	},
 	{
-	     "@id"   : "owl:Temperature",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Temperature",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Time",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Time",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:UltraViolet",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/UltraViolet",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:EMSpectrum"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},	
 	{
-	     "@id"   : "owl:UtlravioletRadiometer",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/UtlravioletRadiometer",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:Radiometer"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/Radiometer"
 	},
 	{
-	     "@id"   : "owl:Velocity", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Velocity", 
 	     "@type" : "owl:Class",
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
- 	     "@id"   : "owl:Volume",
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Volume",
 	     "@type" : "owl:Class" ,
-	     "rdfs:subClassOf" : "owl:PhysicalQuantity"
+	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:Wavelength",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Wavelength",
 	     "@type" : "owl:Class" ,
-             "rdfs:subClassOf" : "owl:PhysicalQuantity"
+             "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/PhysicalQuantity"
 	},
 	{
-	     "@id"   : "owl:XRays",
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/XRays",
 	     "@type" : "owl:Class" ,
-	     "rdfs:subClassOf" : "owl:EMSpectrum"
+	     "rdfs:subClassOf" : "http://projectchronos.eu/ontology/sensors/EMSpectrum"
 	},
 	{
- 	     "@id"   : "owl:ion", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/ion", 
 	     "@type" : "owl:Class" ,
-	     "rdfs:subClassOf" :  "owl:Atom"
+	     "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Atom"
 	},
 	{
- 	     "@id"   : "owl:isotope", 
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/isotope", 
 	     "@type" : "owl:Class" ,
-	     "rdfs:subClassOf" :  "owl:Atom"
+	     "rdfs:subClassOf" :  "http://projectchronos.eu/ontology/sensors/Atom"
 	},
 	{
-	     "@id"   : "owl:Electron", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Electron", 
 	     "@type" : [
 		          "owl:NamedIndividual" ,
-                   	  "owl:Particle"
+                   	  "http://projectchronos.eu/ontology/sensors/Particle"
 		       ]
 	},
 	{
  	     "@id"   : "owl:Neutrino", 
 	     "@type" : [
 		          "owl:NamedIndividual" ,
-                   	  "owl:Particle"
+                   	  "http://projectchronos.eu/ontology/sensors/Particle"
 		       ]
 	},
 	{
-	     "@id"   : "owl:Neutron", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Neutron", 
 	     "@type" : [
 		          "owl:NamedIndividual" ,
-                   	  "owl:Particle"
-		       ]
-
-	},
-	{
-	     "@id"   : "owl:Photon", 
-	     "@type" : [
-		          "owl:NamedIndividual" ,
-                   	  "owl:Particle"
+                   	  "http://projectchronos.eu/ontology/sensors/Particle"
 		       ]
 
 	},
 	{
- 	     "@id"   : "owl:Proton", 
+	     "@id"   : "http://projectchronos.eu/ontology/sensors/Photon", 
 	     "@type" : [
 		          "owl:NamedIndividual" ,
-                   	  "owl:Particle"
+                   	  "http://projectchronos.eu/ontology/sensors/Particle"
+		       ]
+
+	},
+	{
+ 	     "@id"   : "http://projectchronos.eu/ontology/sensors/Proton", 
+	     "@type" : [
+		          "owl:NamedIndividual" ,
+                   	  "http://projectchronos.eu/ontology/sensors/Particle"
 		       ]
 
 	},
 	{
 	     "@type" : "owl:AllDisjointProperties" ,
   	     "owl:members" : [ 
-		                 "owl:detects",
-             			 "owl:emits",
-             			 "owl:hasFieldOfResearch",
-              			 "owl:hasOutput",
-			         "owl:isEmittedBy",
-             			 "owl:isResearchedBy",
-             	                 "owl:measures"
+		                 "http://projectchronos.eu/ontology/sensors/detects",
+             			 "http://projectchronos.eu/ontology/sensors/emits",
+             			 "http://projectchronos.eu/ontology/sensors/hasFieldOfResearch",
+              			 "http://projectchronos.eu/ontology/sensors/hasOutput",
+			         "http://projectchronos.eu/ontology/sensors/isEmittedBy",
+             			 "http://projectchronos.eu/ontology/sensors/isResearchedBy",
+             	                 "http://projectchronos.eu/ontology/sensors/measures"
                              ]
 	}
     ]	
