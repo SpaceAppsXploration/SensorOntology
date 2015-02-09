@@ -100,43 +100,51 @@
                         "rdfs:range"   : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/CCD",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/FabryPerot",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Film",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/ImagingDetector",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                         "rdfs:comment"    : "Taken from the ontology : http://escience.rpi.edu/ontology/vsto/2/0/vsto_all.owl"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Interferometer",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/#OpticalInstrument"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/MichelsonInterferometer",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/MultiChannelPhotometer",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Radar",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : [
                                                 "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
@@ -148,27 +156,32 @@
                                             ]
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/SingleChannelPhotometer",
+                        "owl:sameAs"      :"http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Spectrometer",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
                     },
                     {
-                        "@id"             : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Telescope",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
                     },
                     {
-                        "@id"             : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Ionization",
+                        "owl:sameAs"      : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
                     },
                     {
-                        "@id"             : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Diffraction",
+                        "owl:sameAs"      : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
                     },
@@ -558,7 +571,7 @@
 
                     },
                     {
-                        "@id"             : "owl:RadioMetric",
+                        "@id"             : "http://pramantha.eu/ontology/sensors/RadioMetric",
                         "@type"           : "owl:Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/"
                     },
