@@ -4,201 +4,265 @@
         "owl"   : "http://www.w3.org/2002/07/owl#",
         "rdf"   : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs"  : "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
         "sensor": "http://pramantha.eu/ontology/sensors/"
     },
 
     "@id"    : "",
-    "@type"  : "owl:Ontology",
+    "@type"  : "http://www.w3.org/2002/07/owl#Ontology",
     "defines": [
                     {
-                        "@id"         : "http://pramantha.eu/ontology/sensors/detects",
-                        "@type"       : [
-                                             "owl:AsymmetricProperty",
-                                             "owl:IrreflexiveProperty",
-                                             "owl:ObjectProperty"
-                                        ],
-                        "rdfs:comment": "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",
-                        "rdf:domain"  : "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdf:range"   : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Detector",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : [
+                                                {
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Restriction",
+                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/hasOutput",
+                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                                                },
+                                                {
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Restriction",
+                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/measures",
+                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                                                },
+                                                {
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Restriction",
+                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/hasWorkingPrinciple",
+                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
+                                                },
+                                                {
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Restriction",
+                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/detects",
+                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                                                }
+                                            ],
+
+                        "rdfs:comment"    : "1) [Detector detects some PhysicalEntity] : Detectors are described as objects detecting some physical entity: elementary particles, light, atoms, cosimc dust, etc.  2) [Detector measures some PhysicalQuantity] : Detection of any physical entity entails that some physical quantity of the detected particle is measured: mass, charge, spin, velocity,... 3) [Detector hasWorkingPrinciple some DetectorWorkingPrinciple] : Detection is possible due to physical principles exploited ad hoc. For example, ionisation of charged particles within a solid state detector, used as a reversely biased diode, or electron emission due to the photoelectric effect. 4) [Detector hasOutput some PhysicalQuantity] : Detectors produce as output some physical quantity, most usually time-varying voltages, which are then read by the the readout electronics.",
+                        "rdfs:label"      : "Detector",
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Sensor"
                     },
                     {
-                        "@id"         : "http://pramantha.eu/ontology/sensors/emits",
-                        "@type"       : [
-                                            "owl:AsymmetricProperty",
-                                            "owl:IrreflexiveProperty",
-                                            "owl:ObjectProperty"
+                        "@id"           : "http://pramantha.eu/ontology/sensors/detects",
+                        "@type"         : [
+                                              "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                                              "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                              "http://www.w3.org/2002/07/owl#ObjectProperty"
                                         ],
-                        "rdfs:comment": "A relation between a Detector and a PhysicalEntity. The relation defines an \"active sensor\": if a sensor emits any particles or waves, which are backscattered and re-absorbed, then it is an \"active sensor\". The term \"emits\" implies therefore that the emitted physical entity is also reabsorbed by the same instrument. N.B. Active sensors should belong only to the family of instruments measuring properties of the electromagnetic spectrum. References for this assumption are: 1. http://www.nasa.gov/directorates/heo/scan/communications/outreach/funfacts/txt_passive_active.html#.VKA0MhAT1I; 2. http://www.seos-project.eu/modules/remotesensing/remotesensing-c02-p02.html",
-                        "rdfs:domain" : "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdfs:range"  : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "rdfs:comment"  : "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",
+                        "rdf:domain"    : "http://pramantha.eu/ontology/sensors/Detector",
+                        "rdf:range"     : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdf:label"     : "detects",
+                        "skos:altLabel" : "to detect"
+                    },
+                    {
+                        "@id"           : "http://pramantha.eu/ontology/sensors/emits",
+                        "@type"         : [
+                                              "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                                              "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                              "http://www.w3.org/2002/07/owl#ObjectProperty"
+                                        ],
+                        "rdfs:comment"  : "A relation between a Detector and a PhysicalEntity. The relation defines an \"active sensor\": if a sensor emits any particles or waves, which are backscattered and re-absorbed, then it is an \"active sensor\". The term \"emits\" implies therefore that the emitted physical entity is also reabsorbed by the same instrument. N.B. Active sensors should belong only to the family of instruments measuring properties of the electromagnetic spectrum. References for this assumption are: 1. http://www.nasa.gov/directorates/heo/scan/communications/outreach/funfacts/txt_passive_active.html#.VKA0MhAT1I; 2. http://www.seos-project.eu/modules/remotesensing/remotesensing-c02-p02.html",
+                        "rdfs:domain"   : "http://pramantha.eu/ontology/sensors/Detector",
+                        "rdfs:range"    : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdf:label"     : "emits",
+                        "skos:altLabel" : "to emit"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/hasFieldOfResearch",
-                        "@type"        : "owl:ObjectProperty",
+                        "@type"        : "http://www.w3.org/2002/07/owl#ObjectProperty",
                         "rdfs:label"   : "application",
                         "rdfs:comment" : "A relation between a Detector and FieldOfResearch. A detector is used for some research purpose, i.e. hasApplication in some FieldOfResearch. Examples of fields of research are: Determination of the elemental characteristics of a planet's surface; Dark Energy; Climate Change monitoring, etc...",
                         "rdfs:domain"  : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:range"   : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
-                        "owl:inverseOf": "http://pramantha.eu/ontology/sensors/isResearchedBy"
+                        "owl:inverseOf": "http://pramantha.eu/ontology/sensors/isResearchedBy",
+                        "rdf:label"    : "hasFieldOfResearch"
                     },
                     {
                         "@id"         : "http://pramantha.eu/ontology/sensors/hasOutput",
                         "@type"       : [
-                                            "owl:AsymmetricProperty",
-                                            "owl:IrreflexiveProperty",
-                                            "owl:ObjectProperty"
+                                            "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                                            "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                            "http://www.w3.org/2002/07/owl#ObjectProperty"
                                         ],
                         "rdfs:comment": "A relation between Detector and a Physical Quantity. Detectors give outputs which are then processed by the due electronics. Usual outputs are Physical Quantities such as varying voltages or current flows.",
                         "rdfs:domain" : "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdfs:range"  : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "rdfs:range"  : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"  : "hasOutput"
                     },
                     {
                         "@id"        : "http://pramantha.eu/ontology/sensors/hasWorkingPrinciple",
                         "@type"      : [ 
-                                            "owl:AsymmetricProperty",
-                                            "owl:IrreflexiveProperty",
-                                            "owl:ObjectProperty"
+                                            "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                                            "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                            "http://www.w3.org/2002/07/owl#ObjectProperty"
                                        ],
                         "rdfs:domain": "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdfs:range" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
+                        "rdfs:range" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple",
+                        "rdfs:label" : "hasWorkingPrinciple"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/isEmittedBy",
                         "@type"        : [
-                                            "owl:AsymmetricProperty" ,
-                                            "owl:IrreflexiveProperty",
-                                            "owl:ObjectProperty"
+                                            "http://www.w3.org/2002/07/owl#AsymmetricProperty" ,
+                                            "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                            "http://www.w3.org/2002/07/owl#ObjectProperty"
                                          ],   
                         "rdfs:comment" : "A relation between a PhysicalEntity and a Detector. It is the inverse of the emits property. In case the detector is an active sensor, it \"fires\" something out, usually light, which is backscattered and absorbed. This \"something\", say, light, isEmittedBy the firing Detector",
                         "rdfs:range"   : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:domain"  : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
-                        "owl:inverseOf": "http://pramantha.eu/ontology/sensors/emits"
+                        "owl:inverseOf": "http://pramantha.eu/ontology/sensors/emits",
+                        "rdfs:label"   : "isEmittedBy"
                     },
                     {
                         "@id"         : "http://pramantha.eu/ontology/sensors/isResearchedBy",
                         "@type"       : "http://pramantha.eu/ontology/sensors/ObjectProperty",
                         "rdfs:comment": "A relation between FieldOfResearch and Detector. For every field of research given detectors are used. For Example, to look for pollutants in the Atmosphere (Earth Observation) spectrometers are used. To investigate the surface of celestial bodies ( Solar System Studies) spectrometers are used, but also dust detectors, ecc... THIS PROPRTY IS UNDER EVOLUTION.",
                         "rdfs:range"  : "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdfs:domain" : "http://pramantha.eu/ontology/sensors/FieldOfResearch"
+                        "rdfs:domain" : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
+                        "rdfs:label"  : "isResearchedBy"
                     },
                     {
                         "@id"                : "http://pramantha.eu/ontology/sensors/isTraversedBy",
                         "@type"              : [
-                                                    "owl:AsymmetricProperty",
-                                                    "owl:IrreflexiveProperty",
-                                                    "owl:ObjectProperty"
+                                                    "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                                                    "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                                                    "http://www.w3.org/2002/07/owl#ObjectProperty"
                                                ],
                         "rdfs:domain"        : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:range"         : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
-                        "rdfs:subPropertyOf" : "http://pramantha.eu/ontology/sensors/detects"
+                        "rdfs:subPropertyOf" : "http://pramantha.eu/ontology/sensors/detects",
+                        "rdfs:label"         : "isTraversedBy"
                     },
                     {
-                        "@id"          : "http://pramantha.eu/ontology/sensors/measures",
-                        "@type"        : "owl:ObjectProperty",
-                        "rdfs:comment" : "A relation between the Detector and the PhysicalQuantity it measures. Examples of physical quantities can be: polarization, mass, electric charge, etc...",
-                        "rdf:domain"   : "http://pramantha.eu/ontology/sensors/Detector",
-                        "rdfs:range"   : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@id"           : "http://pramantha.eu/ontology/sensors/measures",
+                        "@type"         : "http://www.w3.org/2002/07/owl#ObjectProperty",
+                        "rdfs:comment"  : "A relation between the Detector and the PhysicalQuantity it measures. Examples of physical quantities can be: polarization, mass, electric charge, etc...",
+                        "rdf:domain"    : "http://pramantha.eu/ontology/sensors/Detector",
+                        "rdfs:range"    : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"    : "measures",
+                        "skos:altLabel" : "to measure"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/CCD",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#CCD",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
+                        "rdfs:label"      : "CCD",
+                        "skos:altLabel"   : "Charge-coupled_device"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/FabryPerot",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#FabryPerot",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
+                        "rdfs:label"      : "FabryPerot",
+                        "skos:altLabel"   : "Fabry–Pérot interferometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Film",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Film",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
+                        "rdfs:label"      : "Film",
+                        "skos:altLabel"   : "Photographic film"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ImagingDetector",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
-                        "@type"           : "owl:Class",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
-                        "rdfs:comment"    : "Taken from the ontology : http://escience.rpi.edu/ontology/vsto/2/0/vsto_all.owl"
+                        "rdfs:comment"    : "Taken from the ontology : http://escience.rpi.edu/ontology/vsto/2/0/vsto_all.owl",
+                        "rdfs:label"      : "ImagingDetector"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Interferometer",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/#OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/#OpticalInstrument",
+                        "rdfs:label"      : "Interferometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/MichelsonInterferometer",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MichelsonInterferometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Interferometer",
+                        "rdfs:label"      : "MichelsonInterferometer",
+                        "skos:altLabel"   : "Michelson interferometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/MultiChannelPhotometer",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#MultiChannelPhotometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer",
+                        "rdfs:label"      : "MultiChannelPhotometer",
+                        "skos:altLabel"   : "Multi-Channel Photometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Radar",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Radar",
-                        "@type"           : "owl:Class",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : [
                                                 "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                                                 {
-                                                    "@type" : "owl:Restriction",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                     "owl:onProperty" : "http://pramantha.eu/ontology/sensors/emits",
                                                     "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
                                                 }
-                                            ]
+                                            ],
+                        "rdfs:label"      : "Radar"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/SingleChannelPhotometer",
                         "owl:sameAs"      :"http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer",
+                        "rdfs:label"      : "SingleChannelPhotometer",
+                        "skos:altLabel"   : "Single-Channel Photometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Spectrometer",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SpectroPhotometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer",
+                        "rdfs:label"      : "Spectrometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Telescope",
                         "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#Telescope",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
+                        "rdfs:label"      : "Telescope"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Ionization",
                         "owl:sameAs"      : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple",
+                        "rdfs:label"      : "Ionization"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Diffraction",
                         "owl:sameAs"      : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl#Diffraction",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple",
+                        "rdfs:label"      : "Diffraction"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/DustDetectors",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Detector"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Detector",
+                        "rdfs:label"      : "DustDetectors",
+                        "skos:altLabel"   : "Dust Detectors"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
-                        "@type"               : "owl:Class",
+                        "@type"               : "http://www.w3.org/2002/07/owl#Class",
                         "owl:equivalentClass" : {
-                                                    "@type"              : "owl:Class",
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                "http://pramantha.eu/ontology/sensors/Detector",
                                                                                {          
-                                                                                   "@type" : "owl:Restriction",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                                                    "owl:onProperty" : "http://pramantha.eu/ontology/sensors/detects",
                                                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
                                                                                }
@@ -206,54 +270,63 @@
 
                                                 },
                         "rdfs:subClassOf"     : {
-                                                    "@type" : "owl:Restriction",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                     "owl:onProperty" : "http://pramantha.eu/ontology/sensors/isTraversedBy",
                                                     "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
                         },
-                        "rdfs:comment"        : "Electromagnetic field instruments measure some physical property of incoming photons. (My definition)"
+                        "rdfs:comment"        : "Electromagnetic field instruments measure some physical property of incoming photons. (My definition)",
+                        "rdfs:label"          : "EMFieldInstrument",
+                        "skos:altLabel"       : "Electromagnetic field instruments"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/MassSpectrometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Detector"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Detector",
+                        "rdfs:label"      : "MassSpectrometer",
+                        "skos:altLabel"   : "Mass Spectrometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
-                        "@type"           : "owl:Class",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : [
                                                 "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                                                 {
-                                                    "@type"              : "owl:Class",
+                                                    "@type"              : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                 "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                                                                                 {
-                                                                                    "@type" : "owl:Class",
+                                                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                                                     "owl:complementOf" : "http://pramantha.eu/ontology/sensors/ActiveInstrument"
                                                                                 }
                                                                            ]
                                                 }
-                                            ]
+                                            ],
+                        "rdfs:label"      : "OpticalInstrument",
+                        "skos:altLabel"   : "Optical Instrument"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Photometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
+                        "rdfs:label"      : "Photometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Polarimeter",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
+                        "rdfs:label"      : "Polarimeter"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/ActiveInstrument",
-                        "@type"               : "owl:Class",
+                        "@type"               : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:label"          : "Active Instrument",
                         "owl:equivalentClass" : {
-                                                    "@type" : "owl:Class",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                "http://pramantha.eu/ontology/sensors/Detector",
                                                                                {
-                                                                                   "@type" : "owl:Restriction",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                                                    "owl:onProperty" : "http://pramantha.eu/ontology/sensors/emits",
                                                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
                                                                                }
@@ -267,261 +340,273 @@
                     {
 
                         "@id"             : "http://pramantha.eu/ontology/sensors/AmountOfSubstance",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "AmountOfSubstance"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Atom",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdfs:label"      : "Atom"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Blue",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Optical"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Optical",
+                        "rdfs:label"      : "Blue"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/CMOS",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : " http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : " http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#ImagingDetector",
+                        "rdfs:label"      : "CMOS"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/CosmicRays",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Particle"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Particle",
+                        "rdfs:label"      : "CosmicRays"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/DeepSpace",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch"
-                    },
-                    {
-                        "@id"             : "http://pramantha.eu/ontology/sensors/Detector",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : [
-                                                {
-                                                    "@type"              : "owl:Restriction",
-                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/hasOutput",
-                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
-                                                },
-                                                {
-                                                    "@type"              : "owl:Restriction",
-                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/measures",
-                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
-                                                },
-                                                {
-                                                    "@type"              : "owl:Restriction",
-                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/hasWorkingPrinciple",
-                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple"
-                                                },
-                                                {
-                                                    "@type"              : "owl:Restriction",
-                                                    "owl:onProperty"     : "http://pramantha.eu/ontology/sensors/detects",
-                                                    "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
-                                                }
-                                            ],
-
-                        "rdfs:comment"    : "1) [Detector detects some PhysicalEntity] : Detectors are described as objects detecting some physical entity: elementary particles, light, atoms, cosimc dust, etc.  2) [Detector measures some PhysicalQuantity] : Detection of any physical entity entails that some physical quantity of the detected particle is measured: mass, charge, spin, velocity,... 3) [Detector hasWorkingPrinciple some DetectorWorkingPrinciple] : Detection is possible due to physical principles exploited ad hoc. For example, ionisation of charged particles within a solid state detector, used as a reversely biased diode, or electron emission due to the photoelectric effect. 4) [Detector hasOutput some PhysicalQuantity] : Detectors produce as output some physical quantity, most usually time-varying voltages, which are then read by the the readout electronics."
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
+                        "rdfs:label"      : "DeepSpace"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple",
-                        "@type"        : "owl:Class",
-                        "rdfs:comment" : "To be expanded"
+                        "@type"        : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:comment" : "To be expanded",
+                        "rdfs:label"   : "DetectorWorkingPrinciple"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/DirectSensingInstrument",
-                        "@type"               : "owl:Class",
-                        "rdfs:label"          : "Direct-Sensing Instrument",
+                        "@type"               : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:label"          : "DirectSensingInstrument",
                         "owl:equivalentClass" : {
-                                                    "@type" : "owl:Class",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [ 
                                                                                "sensor:Detector",
                                                                                {
-                                                                                   "@type" : "owl:Class",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                                                    "owl:complementOf" :"http://pramantha.eu/ontology/sensors/RemoteSensingInstrument"
                                                                                }
                                                                            ]
                                                 },
                         "owl:disjointWith"    : "http://pramantha.eu/ontology/sensors/RemoteSensingInstrument",
                         "rdfs:comment"        : "Direct-sensing instruments, also called contact science instruments, register characteristics of phenomena in their vicinity. (Source: \"Basic of Space flight, Section II, Chapter 12. Typical Science Instruments\", Jet Propulsion Laboratory, www.jpl.nasa.gov/basics/bsf12-1.php )"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Dust",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdfs:label"      : "Dust"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/EMSpectrum",
-                        "@type"        : "owl:Class",
-                        "rdfs:comment" : "I copied and pasted this class and its subclasses from some image file (.png) of an ontology which I cannot find again. It is important to find it again to give credits."
+                        "@type"        : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:comment" : "I copied and pasted this class and its subclasses from some image file (.png) of an ontology which I cannot find again. It is important to find it again to give credits.",
+                        "rdfs:label"   : "EMSpectrum"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/EarthObservation",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
+                        "rdfs:label"      : "EarthObservation"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ElectricCharge",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "ElectricCharge"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ElectricCurrent",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "ElectricCurrent"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ElectricFieldStrength",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "ElectricFieldStrength"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ElectricPotential",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "ElectricPotential"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ElectricalResistance",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "ElectricalResistance"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Energy",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Energy"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/EnergyDensity",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "EnergyDensity"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/ExtremeUltraViolet",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "ExtremeUltraViolet"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/FarInfrared",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Infrared"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Infrared",
+                        "rdfs:label"      : "FarInfrared"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
-                        "@type"        : "owl:Class",
-                        "rdfs:comment" :  "This is just a first sketch. To be expanded."
+                        "@type"        : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:comment" : "This is just a first sketch. To be expanded.",
+                        "rdfs:label"   : "FieldOfResearch"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Force",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Force"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Frequency",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Frequency"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/GammaRays",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "GammaRays"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Heat",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Heat"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Impulse",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Impulse"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/IndexOfRefraction",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "IndexOfRefraction"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Infrared",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "Infrared"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/InfraredRadiometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radiometer"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radiometer",
+                        "rdfs:label"      : "InfraredRadiometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Length",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Length"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/LuminousIntensity",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "LuminousIntensity"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/MagneticFieldStrength",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:labela"     : "MagneticFieldStrength"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Magnetometer",
-                        "@type"           : "owl:Class",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : [
                                                 "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                                                 {
-                                                    "@type" : "owl:Class",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                "http://pramantha.eu/ontology/sensors/EMFieldInstrument",
                                                                                {
-                                                                                   "@type" : "owl:Class",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                                                    "owl:complementOf" : "http://pramantha.eu/ontology/sensors/ActiveInstrument"
                                                                                }
                                                                            ]
                                                 }
-                                            ]
+                                            ],
+                        "rdfs:label"      : "Magnetometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Mass",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Mass"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/MeanLifeTime",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "MeanLifeTime"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Molecule",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdfs:label"      : "Molecule"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/NearInfrared",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" :"http://pramantha.eu/ontology/sensors/Infrared"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Infrared",
+                        "rdfs:label"      : "NearInfrared"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Optical",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "Optical"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Particle",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdfs:label"      : "Particle"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/PassiveInstrument",
-                        "@type"               : "owl:Class",
-                        "rdfs:label"          : "Passive Instrument",
+                        "@type"               : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:label"          : "PassiveInstrument",
                         "owl:equivalentClass" : {
-                                                    "@type" : "owl:Class",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                "http://pramantha.eu/ontology/sensors/Detector",
                                                                                {
-                                                                                   "@type" : "owl:Class",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                                                    "owl:complementOf" : "http://pramantha.eu/ontology/sensors/ActiveInstrument"
                                                                                }
                                                                            ]
@@ -531,80 +616,94 @@
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/PhotoElectronIonization",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" :" http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://www.astro.umd.edu/~eshaya/astro-onto/owl/chemistry.owl#Ionization",
+                        "rdfs:label"      : "PhotoElectronIonization"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
-                        "@type"        : "owl:Class",
-                        "rdfs:comment" : "Physical Entities are what is sensed by a detector. They can be atoms, ions, elementary particles, light, molecules, etc..."
+                        "@type"        : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:comment" : "Physical Entities are what is sensed by a detector. They can be atoms, ions, elementary particles, light, molecules, etc...",
+                        "rdfs:label"   : "PhysicalEntity"
                     },
                     {
                         "@id"          : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
-                        "@type"        : "owl:Class",
-                        "rdfs:comment" : "A physical quantity (or \"physical magnitude\") is a physical property of a phenomenon, body, or substance, that can be quantified by measurement. Source: Wikipedia, http://en.wikipedia.org/wiki/Physical_quantity"
+                        "@type"        : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:comment" : "A physical quantity (or \"physical magnitude\") is a physical property of a phenomenon, body, or substance, that can be quantified by measurement. Source: Wikipedia, http://en.wikipedia.org/wiki/Physical_quantity",
+                        "rdfs:label"   : "PhysicalQuantity"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Plasma",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
+                        "rdfs:label"      : "Plasma"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Power",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Power"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Pressure",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Pressure"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Radio",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "Radio"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/RadioCentrimetric",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio",
+                        "rdfs:label"      : "RadioCentrimetric"
 
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/RadioMetric",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio",
+                        "rdfs:label"      : "RadioMetric"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/RadioMillimetric",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio",
+                        "rdfs:label"      : "RadioMillimetric"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/RadioSubMillimetric",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radio",
+                        "rdfs:label"      : "RadioSubMillimetric"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Radiometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
+                        "rdfs:label"      : "Radiometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Red",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Optical"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Optical",
+                        "rdfs:label"      : "Red"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/RemoteSensingInstrument",
-                        "@type"               : "owl:Class",
-                        "rdfs:label"          :  "Remote-Sensing Instrument",
+                        "@type"               : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:label"          : "RemoteSensingInstrument",
+                        "owl:sameAs"          : "http://pramantha.eu/dbpediadocs/RemoteSensingInstrument",
                         "owl:equivalentClass" : {
-                                                    "@type" : "owl:Class",
+                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
                                                                                "http://pramantha.eu/ontology/sensors/Detector",
                                                                                {
-                                                                                   "@type" : "owl:Restriction",
+                                                                                   "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                                                    "owl:onProperty" : "http://pramantha.eu/ontology/sensors/isTraversedBy",
                                                                                    "owl:someValuesFrom": "http://pramantha.eu/ontology/sensors/PhysicalEntity"
                                                                                }
@@ -614,119 +713,160 @@
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/SolarSystem",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch"
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Solar_System",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/FieldOfResearch",
+                        "rdfs:label"      : "SolarSystem"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Spectrograph",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/SpectroscopicInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/SpectroscopicInstrument",
+                        "rdfs:label"      : "Spectograph",
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Spectrograph"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Spectrometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/SpectroscopicInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/SpectroscopicInstrument",
+                        "rdfs:label"      : "Spectrometer",
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Spectrometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/SpectroscopicInstrument",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/OpticalInstrument",
+                        "rdfs:label"      : "SpectroscopicInstrument"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Spin",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Spin",
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Spin_(physics)"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Temperature",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Temperature",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Temperature"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Time",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Time",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Time"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/UltraViolet",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "UltraViolet",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Ultraviolet"
                     },
                     {
-                        "@id"             : "http://pramantha.eu/ontology/sensors/UtlravioletRadiometer",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radiometer"
+                        "@id"             : "http://pramantha.eu/ontology/sensors/UltravioletRadiometer",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Radiometer",
+                        "rdfs:label"      : "UltravioletRadiometer"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Velocity",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Velocity",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Velocity"
+
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Volume",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Volume",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Volume"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Wavelength",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity"
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
+                        "rdfs:label"      : "Wavelength",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Wavelength"
                     },
                     {
-                        "@id"             : "http://pramantha.eu/ontology/sensors/XRays",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum"
+                        "@id"             : "http://pramantha.eu/ontology/sensors/X-Rays",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
+                        "rdfs:label"      : "X-ray",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/X-ray"
                     },
                     {
-                        "@id"             : "http://pramantha.eu/ontology/sensors/ion",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" :  "http://pramantha.eu/ontology/sensors/Atom"
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Ion",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" :  "http://pramantha.eu/ontology/sensors/Atom",
+                        "rdfs:label"      : "Ion",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Ion"
                     },
                     {
-                        "@id"             : "http://pramantha.eu/ontology/sensors/isotope",
-                        "@type"           : "owl:Class",
-                        "rdfs:subClassOf" :  "http://pramantha.eu/ontology/sensors/Atom"
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Isotope",
+                        "@type"           : "http://www.w3.org/2002/07/owl#Class",
+                        "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Atom",
+                        "rdfs:label"      : "Isotope",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Isotope"
                     },
                     {
-                        "@id"   : "http://pramantha.eu/ontology/sensors/Electron",
-                        "@type" : [
-                                      "owl:NamedIndividual",
-                                      "http://pramantha.eu/ontology/sensors/Particle"
-                                  ]
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Electron",
+                        "@type"           : [
+                                              "http://www.w3.org/2002/07/owl#NamedIndividual",
+                                              "http://pramantha.eu/ontology/sensors/Particle"
+                                          ],
+                        "rdfs:label"      : "Electron",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Electron"
                     },
                     {
-                        "@id"   : "owl:Neutrino",
-                        "@type" : [
-                                      "owl:NamedIndividual",
-                                      "http://pramantha.eu/ontology/sensors/Particle"
-                                  ]
+                        "@id"             : "http://www.w3.org/2002/07/owl#Neutrino",
+                        "@type"           : [
+                                              "http://www.w3.org/2002/07/owl#NamedIndividual",
+                                              "http://pramantha.eu/ontology/sensors/Particle"
+                                          ],
+                        "rdfs:label"      : "Neutrino",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Neutrino"
                     },
                     {
-                        "@id"   : "http://pramantha.eu/ontology/sensors/Neutron",
-                        "@type" : [
-                                      "owl:NamedIndividual",
-                                      "http://pramantha.eu/ontology/sensors/Particle"
-                                  ]
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Neutron",
+                        "@type"           : [
+                                              "http://www.w3.org/2002/07/owl#NamedIndividual",
+                                              "http://pramantha.eu/ontology/sensors/Particle"
+                                          ],
+                        "rdfs:label"      : "Neutron",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Neutron"
 
                     },
                     {
-                        "@id"   : "http://pramantha.eu/ontology/sensors/Photon",
-                        "@type" : [
-                                      "owl:NamedIndividual",
-                                      "http://pramantha.eu/ontology/sensors/Particle"
-                                  ]
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Photon",
+                        "@type"           : [
+                                              "http://www.w3.org/2002/07/owl#NamedIndividual",
+                                              "http://pramantha.eu/ontology/sensors/Particle"
+                                          ],
+                        "rdfs:label"      : "Photon",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Photon"
 
                     },
                     {
-                        "@id"   : "http://pramantha.eu/ontology/sensors/Proton",
-                        "@type" : [
-                                      "owl:NamedIndividual",
-                                      "http://pramantha.eu/ontology/sensors/Particle"
-                                  ]
+                        "@id"             : "http://pramantha.eu/ontology/sensors/Proton",
+                        "@type"           : [
+                                              "http://www.w3.org/2002/07/owl#NamedIndividual",
+                                              "http://pramantha.eu/ontology/sensors/Particle"
+                                          ],
+                        "rdfs:label"      : "Proton",
+                        "rdfs:sameAs"     : "http://pramantha.eu/dbpediadocs/Proton"
 
                     },
                     {
-                        "@type"       : "owl:AllDisjointProperties",
+                        "@type"       : "http://www.w3.org/2002/07/owl#AllDisjointProperties",
                         "owl:members" : [
                                             "http://pramantha.eu/ontology/sensors/detects",
                                             "http://pramantha.eu/ontology/sensors/emits",
