@@ -574,7 +574,7 @@
                                                 }
                                             ],
                         "rdfs:label"      : "Magnetometer",
-                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Magetometer"
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Magnetometer"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/Mass",
