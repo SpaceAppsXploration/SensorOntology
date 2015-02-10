@@ -613,7 +613,7 @@
                         "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
                         "rdfs:label"      : "Particle",
-                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/List_of_particles"
+                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Subatomic_particle"
                     },
                     {
                         "@id"                 : "http://pramantha.eu/ontology/sensors/PassiveInstrument",
@@ -675,8 +675,7 @@
                         "@id"             : "http://pramantha.eu/ontology/sensors/Radio",
                         "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/EMSpectrum",
-                        "rdfs:label"      : "Radio",
-                        "owl:sameAs"      : "http://pramantha.eu/dbpediadocs/Outline_of_radio"
+                        "rdfs:label"      : "Radio"
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/RadioCentrimetric",
@@ -720,7 +719,7 @@
                         "@id"                 : "http://pramantha.eu/ontology/sensors/RemoteSensingInstrument",
                         "@type"               : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:label"          : "RemoteSensingInstrument",
-                        "owl:sameAs"          : "http://pramantha.eu/dbpediadocs/RemoteSensingInstrument",
+                        "owl:sameAs"          : "http://pramantha.eu/dbpediadocs/Remote_sensing",
                         "owl:equivalentClass" : {
                                                     "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [
