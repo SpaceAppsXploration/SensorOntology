@@ -209,7 +209,7 @@
                     },
                     {
                         "@id"             : "http://pramantha.eu/ontology/sensors/SingleChannelPhotometer",
-                        "owl:sameAs"      :"http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
+                        "owl:sameAs"      : "http://escience.rpi.edu/ontology/vsto/2/0/vsto.owl#SingleChannelPhotometer",
                         "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : "http://pramantha.eu/ontology/sensors/Photometer",
                         "rdfs:label"      : "SingleChannelPhotometer",
@@ -269,7 +269,7 @@
                                                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                                                     "owl:onProperty" : "http://pramantha.eu/ontology/sensors/isTraversedBy",
                                                     "owl:someValuesFrom" : "http://pramantha.eu/ontology/sensors/PhysicalEntity"
-                        },
+                                                },
                         "rdfs:comment"        : "Electromagnetic field instruments measure some physical property of incoming photons. (My definition)",
                         "rdfs:label"          : "EMFieldInstrument",
                         "skos:altLabel"       : "Electromagnetic field instruments"
@@ -383,7 +383,7 @@
                         "owl:equivalentClass" : {
                                                     "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                     "owl:intersectionOf" : [ 
-                                                                               "sensor:Detector",
+                                                                               "http://pramantha.eu/ontology/sensors/Detector",
                                                                                {
                                                                                    "@type" : "http://www.w3.org/2002/07/owl#Class",
                                                                                    "owl:complementOf" :"http://pramantha.eu/ontology/sensors/RemoteSensingInstrument"
