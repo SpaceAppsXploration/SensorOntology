@@ -49,7 +49,6 @@
                                               "http://www.w3.org/2002/07/owl#ObjectProperty"
                                         ],
                         "rdfs:comment"  : "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",
-                        "rdf:domain"    : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdf:range"     : "http://pramantha.eu/ontology/sensors/PhysicalEntity",
                         "rdf:label"     : "detects",
                         "skos:altLabel" : "to detect"
@@ -85,7 +84,6 @@
                                             "http://www.w3.org/2002/07/owl#ObjectProperty"
                                         ],
                         "rdfs:comment": "A relation between Detector and a Physical Quantity. Detectors give outputs which are then processed by the due electronics. Usual outputs are Physical Quantities such as varying voltages or current flows.",
-                        "rdfs:domain" : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:range"  : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
                         "rdfs:label"  : "hasOutput"
                     },
@@ -96,7 +94,6 @@
                                             "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
                                             "http://www.w3.org/2002/07/owl#ObjectProperty"
                                        ],
-                        "rdfs:domain": "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:range" : "http://pramantha.eu/ontology/sensors/DetectorWorkingPrinciple",
                         "rdfs:label" : "hasWorkingPrinciple"
                     },
@@ -137,7 +134,6 @@
                         "@id"           : "http://pramantha.eu/ontology/sensors/measures",
                         "@type"         : "http://www.w3.org/2002/07/owl#ObjectProperty",
                         "rdfs:comment"  : "A relation between the Detector and the PhysicalQuantity it measures. Examples of physical quantities can be: polarization, mass, electric charge, etc...",
-                        "rdf:domain"    : "http://pramantha.eu/ontology/sensors/Detector",
                         "rdfs:range"    : "http://pramantha.eu/ontology/sensors/PhysicalQuantity",
                         "rdfs:label"    : "measures",
                         "skos:altLabel" : "to measure"
