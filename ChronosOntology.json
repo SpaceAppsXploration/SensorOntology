@@ -143,32 +143,40 @@
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/Asteroid",
             "owl:sameAs": "http://dbpedia.org/ontology/Asteroid",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/RockyPlanetaryBody",
             "@type": "http://umbel.org/umbel/rc/Asteroid",
             "rdfs:label": "an asteroid",
             "rdfs:comment": "a document representing an asteroid"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/Meteorid",
-            "@type": "http://umbel.org/umbel/rc/Meteorid",
+            "owl:sameAs": "http://umbel.org/umbel/rc/Meteorid",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/RockyPlanetaryBody",
             "rdfs:label": "an meteorid",
             "rdfs:comment": "a document representing a meteorid"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/Comet",
-            "@type": "http://umbel.org/umbel/rc/Comet",
+            "owl:sameAs": "http://umbel.org/umbel/rc/Comet",
+            "@type": [
+                "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/RockyPlanetaryBody",
+                "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/IcyPlanetaryBody"
+            ]
             "rdfs:label": "a comet",
             "rdfs:comment": "a document representing a comet"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/MoonOfAPlanet",
-            "@type": "http://umbel.org/umbel/rc/MoonOfAPlanet",
+            "owl:sameAs": "http://umbel.org/umbel/rc/MoonOfAPlanet",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
             "rdfs:label": "a natural satellite or moon",
             "rdfs:comment": "a document representing a natural satellite or moon",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/TerrestrialPlanet",
-            "@type": "http://umbel.org/umbel/rc/TerrestrialPlanet",
+            "owl:sameAs": "http://umbel.org/umbel/rc/TerrestrialPlanet",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
             "rdfs:label": "an solid/rocky planet",
             "rdfs:comment": "a document representing a solid/rocky planet",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/Planet"
@@ -176,33 +184,38 @@
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/SolidPlanetaryBody",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
-            "@type": "http://umbel.org/umbel/rc/SolidPlanetaryBody",
+            "owl:sameAs": "http://umbel.org/umbel/rc/SolidPlanetaryBody",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
             "rdfs:comment": "planet  composed primarily of solid substances"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/IcyPlanetaryBody",
-            "@type": "http://umbel.org/umbel/rc/TerrestrialPlanet",
-            "rdfs:label": "an icy planet",
-            "rdfs:comment": "a document representing an icy planet",
+            "owl:sameAs": "http://umbel.org/umbel/rc/TerrestrialPlanet",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
+            "rdfs:label": "an icy body",
+            "rdfs:comment": "a document representing an icy body",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/SolidPlanetaryBody"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/GasGiant",
-            "@type": "http://umbel.org/umbel/rc/GasGiant",
+            "@owl:sameAs": "http://umbel.org/umbel/rc/GasGiant",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
             "rdfs:label": "a Jovian planet",
             "rdfs:comment": "a document representing a Jovian planet",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/Planet"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/RockyPlanetaryBody",
-            "@type": "http://umbel.org/umbel/rc/RockyPlanetaryBody",
-            "rdfs:label": "a rocky planet",
-            "rdfs:comment": "a document representing a rocky planet",
+            "owl:sameAs": "http://umbel.org/umbel/rc/RockyPlanetaryBody",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
+            "rdfs:label": "a rocky body",
+            "rdfs:comment": "a document representing a rocky body",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/SolidPlanetaryBody"
         },
         {
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/SubplanetaryStellarOrbiter",
-            "@type": "http://umbel.org/umbel/rc/SubplanetaryStellarOrbiter",
+            "@type": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody",
+            "owl:sameAs": "http://umbel.org/umbel/rc/SubplanetaryStellarOrbiter",
             "rdfs:label": "a smaller body orbiting around stars or planets",
             "rdfs:comment": "a document representing smaller body orbiting around stars or planets",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/SolidPlanetaryBody"
@@ -211,8 +224,8 @@
             "@id": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/FluidPlanetaryBody",
             "owl:sameAs" : "http://umbel.org/umbel/rc/FluidPlanetaryBody",
             "@type": "http://umbel.org/umbel/rc/PlanetaryBody",
-            "rdfs:label": "a planet",
-            "rdfs:comment": "a document representing a planet",
+            "rdfs:label": "a non-solid planet",
+            "rdfs:comment": "a document representing a non-solid planet",
             "skos:broader": "http://pramantha.eu/ontology/space/CelestialBody/PlanetaryBody/
         }
     ]
