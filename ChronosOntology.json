@@ -82,7 +82,8 @@
         {
             "@id": "http://pramantha.eu/ontology/launch",
             "@type": "http://www.w3.org/2002/07/owl#Class",
-            "rdfs:label": "a space launch that took place somewhen in the past",
+            "owl:sameAs": "http://umbel.org/umbel/rc/GroundToOrbitVehicle",
+            "rdfs:label": "a space launch that took place in the past",
             "rdfs:comment": "a document representing a space launch taken from wikipedia page"
         },
         {
@@ -98,6 +99,7 @@
         {
             "@id": "http://pramantha.eu/ontology/event",
             "@type": "http://www.w3.org/2002/07/owl#Class",
+            "owl:sameAs": "http://umbel.org/umbel/rc/Event",
             "rdfs:label": "an event or happening related with a space mission",
             "rdfs:comment": "a document representing an event or happening from Chronos legacy"
         },

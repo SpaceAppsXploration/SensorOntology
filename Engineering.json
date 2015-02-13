@@ -89,7 +89,7 @@
             "skos:broader": [
                 "http://umbel.org/umbel/rc/InformationGatheringDevice"
             ]
-        },
+        }
 
 
   ]
