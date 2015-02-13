@@ -9,5 +9,5 @@ Credits to Jacopo and Lorenzo
 * add 403 redirect to Astronomy Ontology. Example:
 
      http://pramantha.eu/ontology/astronomy/CelestialBody/PlanetaryBody/RockyPlanetaryBody
-     >>>
+     403 to
      http://pramantha.eu/ontology/astronomy/RockyPlanetaryBody
