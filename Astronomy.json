@@ -35,7 +35,7 @@
         },
         {
             "@id": "http://pramantha.eu/ontology/astronomy/CelestialBody/PlanetaryBody/Planet",
-            "owl:sameAs" : "http://dbpedia.org/ontology/Planet",
+            "owl:sameAs" : "http://dbpedia.org/resource/Planet",
             "@type": "http://umbel.org/umbel/rc/Planet",
             "rdfs:label": "a planet",
             "rdfs:comment": "a document representing a planet",
@@ -44,10 +44,10 @@
         {
             "@id": "http://pramantha.eu/ontology/astronomy/CelestialBody/Satellite",
             "owl:sameAs": "http://dbpedia.org/ontology/Satellite",
-            "@type": "http://dbpedia.org/ontology/Satellite",
+            "@type": "http://umbel.org/umbel/rc/Satellite_HeavenlyBody",
             "rdfs:label": "a natural satellite",
             "rdfs:comment": "a document representing a natural satellite",
-            "skos:broader": "http://umbel.org/umbel/rc/Satellite_HeavenlyBody"
+            "skos:broader": "http://umbel.org/umbel/rc/RockyPlanetaryBody"
         },
         {
             "@id": "http://pramantha.eu/ontology/astronomy/CelestialBody/Asteroid",
@@ -113,7 +113,7 @@
             "@type":"http://umbel.org/umbel/rc/GasGiant",
             "rdfs:label": "a Jovian planet",
             "rdfs:comment": "a document representing a Jovian planet",
-            "skos:broader": "http://umbel.org/umbel/rc/CelestialBody/Planet"
+            "skos:broader": "http://umbel.org/umbel/rc/CelestialBody"
         },
         {
             "@id": "http://pramantha.eu/ontology/astronomy/CelestialBody/PlanetaryBody/RockyPlanetaryBody",
@@ -137,7 +137,7 @@
             "@type": "http://umbel.org/umbel/rc/FluidPlanetaryBody",
             "rdfs:label": "a non-solid planet",
             "rdfs:comment": "a document representing a non-solid planet",
-            "skos:broader": "http://umbel.org/umbel/rc/PlanetaryBody/"
+            "skos:broader": "http://umbel.org/umbel/rc/PlanetaryBody"
         }
     ]
 

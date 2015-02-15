@@ -89,10 +89,7 @@
         {
             "@id": "http://pramantha.eu/ontology/mission",
             "@type": "http://www.w3.org/2002/07/owl#Class",
-            "owl:sameAs": [ 
-                "http://umbel.org/umbel/rc/SpaceMission",
-                "http://dbpedia.org/ontology/SpaceMission"
-                ],
+            "owl:sameAs": "http://dbpedia.org/ontology/SpaceMission",
             "rdfs:label": "a space mission",
             "rdfs:comment": "a document representing a space mission from Chronos legacy"
         },
