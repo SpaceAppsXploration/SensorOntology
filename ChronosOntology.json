@@ -1,7 +1,7 @@
 {
     "@context": {
-        "@base"  : "http://pramantha.eu/ontology",
-        "chronos": "http://pramantha.eu/ontology/",
+        "@base"  : "http://pramantha.eu/chronos/ontology",
+        "chronos": "http://pramantha.eu/chronos/ontology/",
         "schema" : "https://schema.org/",
         "skos"   : "http://www.w3.org/2004/02/skos/core#",
         "rdf"    : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
