@@ -15,13 +15,13 @@
 
     "defines": [
         {
-            "@id": "http://pramantha.eu/ontology/engineering/Spacecraft",
+            "@id": "http://pramantha.eu/engineering/ontology/Spacecraft",
             "owl:sameAs": "http://umbel.org/umbel/rc/Spacecraft",
             "@type": "http://umbel.org/umbel/rc/Spacecraft",
             "rdfs:label": "Each instance of spacecraft is a transportation device either deployed entirely in outer space, or one whose trajectories leave the atmosphere of the planet it's launched from, in order to orbit the planet or to travel beyond the planet's gravitational field."
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/Satellite_Device",
+            "@id": "http://pramantha.eu/engineering/ontology/Satellite_Device",
             "owl:sameAs" : "http://umbel.org/umbel/rc/Satellite_Device",
             "@type": "http://umbel.org/umbel/rc/Satellite_Device",
             "rdfs:label": "an artificial satellite",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/GroundToOrbitVehicle",
+            "@id": "http://pramantha.eu/engineering/ontology/GroundToOrbitVehicle",
             "owl:sameAs" : "http://umbel.org/umbel/rc/GroundToOrbitVehicle",
             "@type": "http://umbel.org/umbel/rc/GroundToOrbitVehicle",
             "rdfs:label": "a rocket or any transportation vehicle that can reach orbit",
@@ -42,14 +42,14 @@
             ]
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/InformationGatheringDevice",
+            "@id": "http://pramantha.eu/engineering/ontology/InformationGatheringDevice",
             "owl:sameAs" : "http://umbel.org/umbel/rc/InformationGatheringDevice",
             "@type": "http://umbel.org/umbel/rc/InformationGatheringDevice",
             "rdfs:label": "device typically used in instances of gathering information.",
             "rdfs:comment": "a document representing a information gathering device"
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/AstronomicalSatellite",
+            "@id": "http://pramantha.eu/engineering/ontology/AstronomicalSatellite",
             "owl:sameAs" : "http://umbel.org/umbel/rc/AstronomicalSatellite",
             "@type": "http://umbel.org/umbel/rc/AstronomicalSatellite",
             "rdfs:label": "an artificial satellite",
@@ -60,7 +60,7 @@
             ]
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/WeatherSatellite",
+            "@id": "http://pramantha.eu/engineering/ontology/WeatherSatellite",
             "owl:sameAs" : "http://umbel.org/umbel/rc/WeatherSatellite",
             "@type": "http://umbel.org/umbel/rc/WeatherSatellite",
             "rdfs:label": "an satellite collecting data on the weather of the heavenly body which it orbits",
@@ -71,7 +71,7 @@
             ]
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/EarthRemoteSensingSatellite",
+            "@id": "http://pramantha.eu/engineering/ontology/EarthRemoteSensingSatellite",
             "owl:sameAs" : "http://umbel.org/umbel/rc/EarthRemoteSensingSatellite",
             "@type": "http://umbel.org/umbel/rc/EarthRemoteSensingSatellite",
             "rdfs:label": "an artificial satellite",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "@id": "http://pramantha.eu/ontology/engineering/SpaceProbe",
+            "@id": "http://pramantha.eu/engineering/ontology/SpaceProbe",
             "owl:sameAs" : "http://umbel.org/umbel/rc/SpaceProbe",
             "@type": "http://umbel.org/umbel/rc/SpaceProbe",
             "rdfs:label": "These are unmanned vehicles which are sent to other bodies in the Solar system for the purpose gathering data. Sometimes a separate vehicle (probe or lander) is launched from the main vehicle, the smaller vehicle usually being referred to as a probe. In these cases, both vehicle would be SpaceProbes in the present sense.",
