@@ -51,7 +51,7 @@
             "rdfs:label": "is a mission that carries the payload named",
             "rdfs:comment": "subject-document is a mission or a launch carrying the object-document",
             "rdfs:domain": ["http://pramantha.eu/chronos/ontology/launch", "http://pramantha.eu/chronos/ontology/mission"],
-            "rdfs:range": ["http://pramantha.eu/chronos/ontology/sensor"]
+            "rdfs:range": ["http://pramantha.eu/sensors/ontology/Detector"]
         },
         {
             "@id": "http://pramantha.eu/chronos/ontology/relatedMatch",
