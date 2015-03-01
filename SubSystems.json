@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "engineering": "http://pramantha.eu/engineering/ontology/",
+    "@base": "http://pramantha.eu/subsystems/ontology",
+    "spacecraft": "http://pramantha.eu/spacecraft/ontology/",
+    "subsystems": "http://pramantha.eu/subsystems/ontology/",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "dbpedia": "http://dbpedia.org/ontology/"
+  },
+  "@id": "",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "rdfs:label": "Objects and properties to describe systems and subsystems of devices and structures needed to fly a spacecraft, including structure and platform. Words separated by _ has to be read as separated concepts, camelCase in they are the same concepts (see umbel.org for this norm)",
+  "rdfs:comment": "A space vessel is described as made of two components: a set of devices called BUS and a set of one or more DETECTORS (see /sensors/ontology/Detector)",
+  "defines": [
+
+
+
+  ]
+}
