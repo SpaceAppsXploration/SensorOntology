@@ -2,6 +2,7 @@
     "@context": {
         "@base": "http://pramantha.eu/engineering/ontology",
         "engineering": "http://pramantha.eu/engineering/ontology/",
+        "device": "http://pramantha.eu/engineering/ontology/Device",
         "schema": "https://schema.org/",
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -95,12 +96,26 @@
             "@type": "http://umbel.org/umbel/rc/SystemOfDevices",
             "rdfs:label": "The set of the systems and supporting subsystems needed to fly a spacecraft, including structure and platform.",
             "rdfs:comment": "a document representing a spacecraft bus"
-        }
+        },
         {
             "@id": "http://pramantha.eu/engineering/ontology/CDH",
-            "@type": "http://umbel.org/umbel/rc/ElectricalDevice",
-            "rdfs:label": "The subsystem that ensure networing capability of the other devices in the spacecraft.",
-            "rdfs:comment": "a document representing a Command and Data Handling Device"
+            "@type": [
+              "http://umbel.org/umbel/rc/BuiltInDevice",
+              "http://umbel.org/umbel/rc/ElectricalDevice"
+            ],
+            "device:function": "http://umbel.org/umbel/rc/InformationTransferEvent",
+            "rdfs:label": "a Command and Data Handling Device",
+            "rdfs:comment": "The subsystem that ensures networking capabilities to other devices in the spacecraft."
+        },
+        {
+            "@id": "http://pramantha.eu/engineering/ontology/Propulsion",
+            "@type": "http://umbel.org/umbel/rc/PhysicalDevice",
+            "rdfs:label": "a Propulsion Device",
+            "device:function": [
+              "http://umbel.org/umbel/rc/ProjectilePropelling",
+              "http://umbel.org/umbel/rc/Propelling"
+            ],
+            "rdfs:comment": "The subsystem that ensures the propulsion of the spacecraft."
         }
 
 
