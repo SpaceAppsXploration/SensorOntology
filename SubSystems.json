@@ -242,7 +242,7 @@
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isSubsystemOf",
-                    "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/Electronics_Spacecraft"
+                    "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/SystemOfDevices_Spacecraft"
                 },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
