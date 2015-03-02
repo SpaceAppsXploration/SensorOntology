@@ -92,16 +92,16 @@
             "rdf:domain" : [
                 "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
             ],
-            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Volume"],
-            "skos:prefLabel": "hasVolume"
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Ampere"],
+            "skos:prefLabel": "hasMinAmpere"
         },
         {
             "@id": "http://pramantha.eu/subsystems/ontology/hasMaxAmpere",
             "rdf:domain" : [
                 "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
             ],
-            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Voltage"],
-            "skos:prefLabel": "hasVoltage"
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Ampere"],
+            "skos:prefLabel": "hasMaxAmpere"
         },
         {
             "@id": "http://pramantha.eu/subsystems/ontology/hasMass",
