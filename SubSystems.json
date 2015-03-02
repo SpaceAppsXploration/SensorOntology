@@ -164,11 +164,6 @@
             "rdfs:subClassOf" : [
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isDeployedIn",
-                    "owl:hasValue" : "http://pramantha.eu/engineering/ontology/Spacecraft"
-                },
-                {
-                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isSubsystemOf",
                     "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/Payload_Spacecraft"
                 },
