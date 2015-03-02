@@ -13,9 +13,278 @@
   },
   "@id": "",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
-  "rdfs:label": "Objects and properties to describe systems and subsystems of devices and structures needed to fly a spacecraft, including structure and platform. Words separated by _ has to be read as separated concepts, camelCase in they are the same concepts (see umbel.org for this norm)",
-  "rdfs:comment": "A space vessel is described as made of two components: a set of devices called BUS and a set of one or more DETECTORS (see /sensors/ontology/Detector)",
+  "rdfs:label": "Subsystems that run sub-tasks that are needed for the spacecraft to be working and fulfilling the objectives of the mission. Words separated by _ has to be read as separated concepts, camelCase in they are the same concepts (see umbel.org for this norm)",
+  "rdfs:comment": "The Bus is a system with different subsystems that carry on critical processes ",
   "defines": [
+         {
+            "@id" : "http://pramantha.eu/subsystems/ontology/function",
+            "@type" : [
+                "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                "http://www.w3.org/2002/07/owl#ObjectProperty"
+            ],
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdfs:comment" : "The function and the objective what the device performs or make possible",
+            "rdf:label" : "what the device is used for",
+            "skos:prefLabel" : "function",
+            "skos:altLabel" : "is used for"
+        },
+        {
+          "@id" : "http://pramantha.eu/subsystems/ontology/UnitOfMeasure",
+          "@type" : [
+                "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                "http://www.w3.org/2002/07/owl#ObjectProperty"
+          ],
+          "owl:sameAs": ["http://umbel.org/umbel/rc/UnitOfMeasure", "http://dbpedia.org/resource/Units_of_measurement"],
+          "rdf:range" : [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"
+          ]
+        },
+        {
+            "@id" : "http://pramantha.eu/subsystems/ontology/embedSensor",
+            "@type" : [
+                "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
+                "http://www.w3.org/2002/07/owl#ObjectProperty"
+            ],
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdf:range" : [
+                "http://pramantha.eu/sensors/ontology/Detector"
+            ],
+            "rdfs:comment" : "It is a payload",
+            "rdfs:label" : "a subsystem that holds a sensor",
+            "skos:prefLabel" : "embedSensor",
+            "skos:altLabel" : "holds a sensor"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/subSystemType",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdfs:label": "A property that references the subsystem to the kind of the devices it holds.",
+            "rdfs:comment": "Every subsystem contains an homogeneous group of devices.",
+            "skos:prefLabel": "subSystemType"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/isStandard",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdfs:label": "A property that references the standard platform for which the subsystem has been designed.",
+            "rdfs:comment": "There are many different standards that imply quantitative and qualitative differences",
+            "skos:prefLabel": "subSystemType"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasVolume",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Volume", "http://dbpedia.org/resource/Volume"],
+            "skos:prefLabel": "hasVolume"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasMinAmpere",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Volume"],
+            "skos:prefLabel": "hasVolume"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasMaxAmpere",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Ampere", "http://dbpedia.org/resource/Voltage"],
+            "skos:prefLabel": "hasVoltage"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasMass",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Mass", "http://dbpedia.org/resource/Mass", "http://schema.org/Mass"],
+            "skos:prefLabel": "hasMass"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasPower",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://umbel.org/umbel/rc/Power", "http://dbpedia.org/resource/Power_(physics)"],
+            "skos:prefLabel": "hasPower"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasSpecificImpulse",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+           "skos:exactMatch": ["http://dbpedia.org/resource/Specific_impulse"],
+            "skos:prefLabel": "hasSpecificImpulse"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasMonetaryValue",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:exactMatch": ["http://dbpedia.org/resource/Price", "http://umbel.org/umbel/rc/MonetaryValue", "http://schema.org/PriceSpecification"],
+            "skos:prefLabel": "hasMonetaryValue",
+            "rdfs:comment": "Amount of money it can be bought for, or an esteem of value."
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasWireInWith",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdf:range" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:prefLabel": "hasWireInWith",
+            "rdfs:comment": "This device receive input from another device"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/hasWireOutWith",
+            "rdf:domain" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "rdf:range" : [
+                "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft"
+            ],
+            "skos:prefLabel": "hasWireOutWith",
+            "rdfs:comment": "This device send output to another device"
+        },
+        {
+            "@id": "http://pramantha.eu/spacecraft/ontology/Spacecraft_Detector",
+            "@type" : "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft",
+            "rdfs:subClassOf" : [
+                "http://pramantha.eu/sensors/ontology/Detector",
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isDeployedIn",
+                    "owl:hasValue" : "http://pramantha.eu/engineering/ontology/Spacecraft"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isSubsystemOf",
+                    "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/Payload_Spacecraft"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsytems/ontology/function",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsytems/ontology/embedSensor",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasWireOutWith",
+                    "owl:hasValue" : [
+                      "http://pramantha.eu/subsystems/ontology/COM",
+                      "http://pramantha.eu/subsystems/ontology/CDH"
+                    ]
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasWireInWith",
+                    "owl:hasValue" : "http://pramantha.eu/subsystems/ontology/Bus_PrimaryPower"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasVolume",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasMinAmpere",
+                    "owl:minCardinality" : 1
+                },
+                              {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasMaxAmpere",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasVoltage",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasPower",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasMass",
+                    "owl:minCardinality" : 1
+                }
+            ],
+            "rdfs:label": "A space detector is a sensor supported by another device that let it collect data, that is deployed into a spacecraft and works outside Earth lower atmosphere",
+            "rdfs:comment": "Any scientific instrument carried by a space probe or an artificial satellite",
+            "skos:prefLabel": "Spacecraft_Detector"
+        },
+        {
+            "@id": "http://pramantha.eu/subsystems/ontology/Spacecraft_Propulsion",
+            "@type" : "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft",
+            "rdfs:subClassOf" : [
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsytems/ontology/function",
+                    "owl:hasValue" : "http://umbel.org/umbel/rc/ProjectilePropelling"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isSubsystemOf",
+                    "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/Electronics_Spacecraft"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasVolume",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasPower",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasMass",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasSpecificImpulse",
+                    "owl:minCardinality" : 1
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/subSystemType",
+                    "owl:hasValue" : "http://umbel.org/umbel/rc/PhysicalDevice"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/hasWireInWith",
+                    "owl:hasValue" : [
+                      "http://pramantha.eu/subsystems/ontology/Bus_PrimaryPower",
+                      "http://pramantha.eu/subsystems/ontology/CDH"
+                    ]
+                }
+            ],
+
+            "skos:prefLabel": "Spacecraft_Propulsion",
+            "rdfs:label": "The set of subsystems needed to make a spacecraft moving in space.",
+            "rdfs:comment": "Complex devices-subsystems used for impelling (processes of applying a force which results in translational motion) a spacecraft, in the specific http://umbel.org/umbel/rc/ProjectilePropelling"
+
+        }
 
 
 
