@@ -162,7 +162,6 @@
             "@id": "http://pramantha.eu/spacecraft/ontology/Spacecraft_Detector",
             "@type" : "http://pramantha.eu/spacecraft/ontology/Subsystem_Spacecraft",
             "rdfs:subClassOf" : [
-                "http://pramantha.eu/sensors/ontology/Detector",
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isDeployedIn",
@@ -172,6 +171,11 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://pramantha.eu/spacecraft/ontology/isSubsystemOf",
                     "owl:hasValue" : "http://pramantha.eu/spacecraft/ontology/Payload_Spacecraft"
+                },
+                {
+                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+                    "owl:onProperty" : "http://pramantha.eu/subsystems/ontology/subSystemType",
+                    "owl:hasValue" : "http://pramantha.eu/sensors/ontology/Detector"
                 },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
