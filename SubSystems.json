@@ -77,7 +77,7 @@
             ],
             "rdfs:label": "A property that references the standard platform for which the subsystem has been designed.",
             "rdfs:comment": "There are many different standards that imply quantitative and qualitative differences",
-            "skos:prefLabel": "subSystemType"
+            "skos:prefLabel": "isStandard"
         },
         {
             "@id": "http://pramantha.eu/subsystems/ontology/hasVolume",
