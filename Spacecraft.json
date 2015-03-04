@@ -71,11 +71,6 @@
                 "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft",
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf",
-                    "owl:hasValue" : "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
-                },
-                {
-                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/embedSensor",
                     "owl:minCardinality" : 1
                 }
@@ -83,18 +78,6 @@
             "rdfs:label": "The set of the detectors and their supporting devices.",
             "rdfs:comment": "The set of devices that the spacecraft carries for scientific purposes.",
             "skos:prefLabel": "Payload_Spacecraft"
-        },
-        {
-            "@id": "http://ontology.projectchronos.eu/spacecraft/isDeployedIn",
-            "@type" : [
-                      "http://www.w3.org/2002/07/owl#AsymmetricProperty",
-                      "http://www.w3.org/2002/07/owl#ObjectProperty"
-            ],
-            "rdf:range": [
-
-            ],
-            "rdfs:label": "the environment in which a device or a system of devices is designed to work",
-            "skos:prefLabel": "isDeployedIn"
         },
         {
             "@id" : "http://ontology.projectchronos.eu/subsystems/embedSensor",
@@ -114,7 +97,18 @@
             "skos:prefLabel" : "embedSensor",
             "skos:altLabel" : "holds a sensor"
         },
+        {
+            "@id": "http://ontology.projectchronos.eu/spacecraft/isDeployedIn",
+            "@type" : [
+                      "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+                      "http://www.w3.org/2002/07/owl#ObjectProperty"
+            ],
+            "rdf:range": [
 
+            ],
+            "rdfs:label": "the environment in which a device or a system of devices is designed to work",
+            "skos:prefLabel": "isDeployedIn"
+        }
 
 ]
 
