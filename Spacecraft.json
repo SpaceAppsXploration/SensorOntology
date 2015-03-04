@@ -42,6 +42,13 @@
             "skos:prefLabel": "isSubsystemOf"
         },
         {
+            "@id": "http://ontology.projectchronos.eu/spacecraft/isComponent",
+            "@type" : [
+                "http://www.w3.org/2002/07/owl#ObjectProperty"
+            ],
+            "skos:prefLabel": "isComponent"
+        },
+        {
             "@id": "http://ontology.projectchronos.eu/spacecraft/hasSubSystem",
             "owl:inverseOf": "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf",
             "@type" : [
@@ -62,7 +69,8 @@
             ],
             "rdfs:label": "A device that is deployed into a spacecraft and works outside Earth lower atmosphere",
             "rdfs:comment": "A Device is an artifact with a relatively rigid, set shape, designed for a specific use or to perform a specific function",
-            "skos:prefLabel": "Subsystem_Spacecraft"
+            "skos:prefLabel": "Subsystem_Spacecraft",
+            "spacecraft:isComponent": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft",

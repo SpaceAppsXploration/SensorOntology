@@ -183,23 +183,17 @@
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
             "@type" : "http://www.w3.org/2002/07/owl#Class",
             "rdfs:subClassOf" : [
-                "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft",
+                "http://ontology.projectchronos.eu/spacecraft/SubSystems_Spacecraft",
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/subSystemType",
-                    "owl:hasValue" : "http://ontology.projectchronos.eu/sensors/Sensor"
-                },
-                {
-                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/function",
+                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/objective",
                     "owl:minCardinality" : 1
                 },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/isDeployedIn",
-                    "owl:hasValue" : "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
+                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/isComponent",
+                     "owl:hasValue" : "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
                 },
-
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
