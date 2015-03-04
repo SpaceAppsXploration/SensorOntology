@@ -183,6 +183,7 @@
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
             "@type" : "http://www.w3.org/2002/07/owl#Class",
             "rdfs:subClassOf" : [
+                "http://umbel.org/umbel/rc/Sensor_Device",
                 "http://ontology.projectchronos.eu/spacecraft/SubSystems_Spacecraft",
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
