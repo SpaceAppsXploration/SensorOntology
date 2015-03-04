@@ -54,24 +54,6 @@
             "skos:prefLabel" : "unitOfMeasure"
         },
         {
-            "@id" : "http://ontology.projectchronos.eu/subsystems/embedSensor",
-            "@type" : [
-                "http://www.w3.org/2002/07/owl#AsymmetricProperty",
-                "http://www.w3.org/2002/07/owl#IrreflexiveProperty",
-                "http://www.w3.org/2002/07/owl#ObjectProperty"
-            ],
-            "rdf:domain" : [
-                "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft"
-            ],
-            "rdf:range" : [
-                "http://ontology.projectchronos.eu/sensors/Detector"
-            ],
-            "rdfs:comment" : "It is a payload",
-            "rdfs:label" : "a subsystem that holds a sensor",
-            "skos:prefLabel" : "embedSensor",
-            "skos:altLabel" : "holds a sensor"
-        },
-        {
             "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType",
             "rdf:domain" : [
                 "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft"
@@ -201,11 +183,11 @@
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
             "@type" : "http://www.w3.org/2002/07/owl#Class",
             "rdfs:subClassOf" : [
-                "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft",
+                "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft",
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf",
-                    "owl:hasValue" : "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
+                    "owl:hasValue" : "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
                 },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
@@ -217,11 +199,7 @@
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/function",
                     "owl:minCardinality" : 1
                 },
-                {
-                    "@type" : "http://www.w3.org/2002/07/owl#Restriction",
-                    "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/embedSensor",
-                    "owl:minCardinality" : 1
-                },
+
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
