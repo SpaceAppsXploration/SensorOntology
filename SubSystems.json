@@ -171,8 +171,8 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
                     "owl:hasValue" : [
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH"
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
                     ]
                 },
                 {
@@ -234,8 +234,8 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireInWith",
                     "owl:hasValue" : [
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH"
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
                     ]
                 }
             ],
@@ -316,17 +316,17 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireInWith",
                     "owl:hasValue" : [
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower"
+                        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" }
                     ]
                 },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
                     "owl:hasValue" : [
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication"
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" },
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion" },
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" },
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" }
                     ]
                 }
             ],
@@ -441,9 +441,9 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/function",
                     "owl:hasValue" : [
-                        "http://umbel.org/umbel/rc/InformationTransferEvent",
-                        "http://dbpedia.org/resource/Electronic_data_processing",
-                        "http://dbpedia.org/resource/Process_control"
+                        { "@id": "http://umbel.org/umbel/rc/InformationTransferEvent" },
+                        { "@id": "http://dbpedia.org/resource/Electronic_data_processing" },
+                        { "@id": "http://dbpedia.org/resource/Process_control" }
                     ]
                 },
                 {
@@ -525,7 +525,7 @@
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication",
             "@type" : "http://www.w3.org/2002/07/owl#Class",
             "rdfs:subClassOf" : [
-                "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft",
+                { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
                 {
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsytems/function",
