@@ -153,7 +153,7 @@
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
-            "@type" : "http://www.w3.org/2002/07/owl#Class",
+            "@type" : "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft",
             "rdfs:subClassOf" : [
                 { "@id": "http://umbel.org/umbel/rc/Sensor_Device" },
                 { "@id": "http://ontology.projectchronos.eu/spacecraft/SubSystems_Spacecraft" },
@@ -283,7 +283,8 @@
                       "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH",
                       "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS",
                       "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal"
+                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal",
+                      "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
                     ]
                 }
             ],
@@ -326,7 +327,8 @@
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" },
-                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" }
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
+                      { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
                     ]
                 }
             ],
@@ -386,7 +388,8 @@
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireInWith",
                     "owl:hasValue" : [
                         { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
-                        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" }
+                        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
+                        { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
                     ]
                 }
             ],
@@ -512,7 +515,8 @@
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
-                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" }
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" },
+                      { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
                     ]
                 }
             ],
