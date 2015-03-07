@@ -153,7 +153,7 @@
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
-            "@type" : "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft",
+            "@type" : "http://www.w3.org/2002/07/owl#Class",
             "rdfs:subClassOf" : [
                 { "@id": "http://umbel.org/umbel/rc/Sensor_Device" },
                 { "@id": "http://ontology.projectchronos.eu/spacecraft/SubSystems_Spacecraft" },
@@ -198,7 +198,8 @@
             ],
             "rdfs:label": "A space detector is a sensor supported by another device that let it collect data, that is deployed into a spacecraft and works outside Earth lower atmosphere",
             "rdfs:comment": "Any scientific instrument carried by a space probe or an artificial satellite",
-            "skos:prefLabel": "Spacecraft_Detector"
+            "skos:prefLabel": "Spacecraft_Detector",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion",
@@ -242,7 +243,8 @@
 
             "skos:prefLabel": "Spacecraft_Propulsion",
             "rdfs:label": "The set of subsystems needed to make a spacecraft moving in space.",
-            "rdfs:comment": "Complex devices-subsystems used for impelling (processes of applying a force which results in translational motion) a spacecraft, in the specific http://umbel.org/umbel/rc/ProjectilePropelling"
+            "rdfs:comment": "Complex devices-subsystems used for impelling (processes of applying a force which results in translational motion) a spacecraft, in the specific http://umbel.org/umbel/rc/ProjectilePropelling",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
 
         },
         {
@@ -279,19 +281,19 @@
                     "@type" : "http://www.w3.org/2002/07/owl#Restriction",
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
                     "owl:hasValue" : [
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion",
-                      "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal",
-                      "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
+                      { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
+                      { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" },
+                      { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" },
+                      { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion" },
+                      { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" }
                     ]
                 }
             ],
 
             "skos:prefLabel": "Spacecraft_PrimaryPower",
             "rdfs:label": "The set of subsystems needed to make a spacecraft to collect energy to operate.",
-            "rdfs:comment": "Complex devices-subsystems used for collecting energy."
+            "rdfs:comment": "Complex devices-subsystems used for collecting energy.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower",
@@ -327,15 +329,15 @@
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" },
-                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
-                      { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" }
                     ]
                 }
             ],
 
             "skos:prefLabel": "Spacecraft_BackupPower",
             "rdfs:label": "The set of subsystems needed to make a spacecraft to store energy from the primary power source.",
-            "rdfs:comment": "Complex devices-subsystems used for storing energy."
+            "rdfs:comment": "Complex devices-subsystems used for storing energy.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
 
         },
         {
@@ -370,7 +372,8 @@
 
             "skos:prefLabel": "Spacecraft_Thermal_PassiveDevice",
             "rdfs:label": "Device of of class Thermal that does NOT consume energy from the spacecraft power source.",
-            "rdfs:comment": "They are passive because they mostly transform radiation into heating/cooling "
+            "rdfs:comment": "They are passive because they mostly transform radiation into heating/cooling ",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
 
         },
         {
@@ -388,8 +391,7 @@
                     "owl:onProperty" : "http://ontology.projectchronos.eu/subsystems/hasWireInWith",
                     "owl:hasValue" : [
                         { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
-                        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
-                        { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
+                        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" }
                     ]
                 }
             ],
@@ -433,7 +435,8 @@
 
             "skos:prefLabel": "Spacecraft_Structure",
             "rdfs:label": "Artifacts or rigid devices used to create a supporting structure for all the others devices.",
-            "rdfs:comment": "It's the skeleton and framework of the spacecraft."
+            "rdfs:comment": "It's the skeleton and framework of the spacecraft.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH",
@@ -515,15 +518,15 @@
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
                       { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
-                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" },
-                      { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
+                      { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" }
                     ]
                 }
             ],
 
             "skos:prefLabel": "Spacecraft_CDH",
             "rdfs:label": "Command and Data Handling, it is the device that connects the other devices, it processes and deliver information.",
-            "rdfs:comment": "The DH system shall: Enable HK and science data flow – Housekeeping data (Temperatures, Pressures, Voltages, Currents, Status,...) – Attitude data – Payload data (e.g., Science data) - Receive and distribute commands - Perform TM and TC protocols - Distribute timing signals - Synchronization of data – Time stamping of data - Provide data storage - Execute commands and schedules - Control subsystems and payloads - Monitor spacecraft health - Make autonomous decisions - Perform data compression."
+            "rdfs:comment": "The DH system shall: Enable HK and science data flow – Housekeeping data (Temperatures, Pressures, Voltages, Currents, Status,...) – Attitude data – Payload data (e.g., Science data) - Receive and distribute commands - Perform TM and TC protocols - Distribute timing signals - Synchronization of data – Time stamping of data - Provide data storage - Execute commands and schedules - Control subsystems and payloads - Monitor spacecraft health - Make autonomous decisions - Perform data compression.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication",
@@ -578,7 +581,8 @@
 
             "skos:prefLabel": "Spacecraft_Communication",
             "rdfs:label": "It handles communication from/to ground base or other spacecraft.",
-            "rdfs:comment": "Complex devices-subsystems used for transmitting/receiving radio waves."
+            "rdfs:comment": "Complex devices-subsystems used for transmitting/receiving radio waves.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS",
@@ -620,7 +624,8 @@
 
             "skos:prefLabel": "Spacecraft_AODCS",
             "rdfs:label": "Attitude and Orbit Determination Control",
-            "rdfs:comment": "Complex devices-subsystems used to set the direction and the position of the spacecraft, it controls flight dynamics."
+            "rdfs:comment": "Complex devices-subsystems used to set the direction and the position of the spacecraft, it controls flight dynamics.",
+            "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS_ActiveDevice",
