@@ -1,333 +1,450 @@
 {
     "@context": {
-        "@base"    : "http://ontology.projectchronos.eu/solasysytem",
+        "@base": "http://ontology.projectchronos.eu/solasysytem",
         "astronomy": "http://ontology.projectchronos.eu/astronomy/",
-        "schema"   : "https://schema.org/",
-        "skos"     : "http://www.w3.org/2004/02/skos/core#",
-        "rdf"      : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs"     : "http://www.w3.org/2000/01/rdf-schema#",
-        "owl"      : "http://www.w3.org/2002/07/owl#",
-        "dbpedia"  : "http://dbpedia.org/ontology/"
+        "schema": "https://schema.org/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "dbpedia": "http://dbpedia.org/ontology/"
     },
-
     "@id": "",
     "@type": "http://www.w3.org/2002/07/owl#Ontology",
-    "defines": [ 
+    "defines": [
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Solar_System",
-            "@type":"http://ontology.projectchronos.eu/astronomy/Planetary_system",
-            "owl:sameAs": "http://umbel.org/umbel/rc/SolarSystem",
+            "@type": "http://ontology.projectchronos.eu/astronomy/Planetary_system",
+            "owl:sameAs": "http://umbel.org/umbel/rc/SolarSystem"
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Sun",
             "@type": "http://ontology.projectchronos.eu/astronomy/Star",
             "rdfs:label": "The Sun"
-        },        
+        },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Mercury",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetMercury" },
-                { "@id": "http://dbpedia.org/resource/Mercury_(planet)" }
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetMercury"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Mercury_(planet)"
+                }
             ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Venus",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetVenus" },
-                { "@id": "http://dbpedia.org/resource/Venus_(planet)" }
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetVenus"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Venus_(planet)"
+                }
             ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Earth",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody" }
-            ],      
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody"
+                }
+            ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetEarth" },
-                { "@id": "http://dbpedia.org/resource/Earth" }
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetEarth"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Earth"
+                }
             ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Moon",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://umbel.org/umbel/rc/MoonOfEarth",
                 "http://dbpedia.org/resource/Moon"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Earth"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Mars",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody" },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/TerrestrialPlanet"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/SolidPlanetaryBody"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetMars" },
-                { "@id": "http://dbpedia.org/resource/Mars" }
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetMars"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Mars"
+                }
             ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Phobos",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://umbel.org/umbel/rc/http://umbel.org/umbel/rc/Phobos_MoonOfMars",
                 "http://dbpedia.org/resource/Phobos_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Mars"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Deimos",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://umbel.org/umbel/rc/http://umbel.org/umbel/rc/Deimos_MoonOfMars",
                 "http://dbpedia.org/resource/Deimos_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Mars"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Jupiter",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/solarsystem/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/solarsystem/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetMars" },
-                { "@id": "http://dbpedia.org/resource/Mars" }
-            ],
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetMars"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Mars"
+                }
+            ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Metis",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Metis_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Adrastea",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
-            ],            "owl:sameAs": [
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
+            ],
+            "owl:sameAs": [
                 "http://dbpedia.org/resource/Adrastea_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Amalthea",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Amalthea_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Thebe",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Thebe_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Io",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Io_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Europa",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Europa_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Ganymede",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Ganymede_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Callisto",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Callisto_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Themisto",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Themisto_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Leda",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Leda_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Himalia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Himalia_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Lysithea",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Lysithea_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Elara",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Elara_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Carpo",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Carpo_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Euporie",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Euporie_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/OtherMoonsOfJupiter",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Moons_of_Jupiter"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Jupiter"
-
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Saturn",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetSaturn" },
-                { "@id": "http://dbpedia.org/resource/Saturn" }
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetSaturn"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Saturn"
+                }
             ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Mimas",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Mimas_(moon)"
@@ -337,8 +454,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Enceladus",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Enceladus_(moon)"
@@ -348,8 +469,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Thetys",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Thetys_(moon)"
@@ -359,8 +484,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Dione",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Dione_(moon)"
@@ -370,8 +499,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Rhea",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Rhea_(moon)"
@@ -381,8 +514,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Titan",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Titan_(moon)"
@@ -392,30 +529,46 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Iapetus",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Iapetus_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Saturn"
         },
-        {       
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Uranus",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetUranus" },
-                { "@id": "http://dbpedia.org/resource/Uranus" }
-            ],
-        },
                 {
+                    "@id": "http://umbel.org/umbel/rc/PlanetUranus"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Uranus"
+                }
+            ]
+        },
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Cordelia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Cordelia_(moon)"
@@ -425,8 +578,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Ophelia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Ophelia_(moon)"
@@ -436,8 +593,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Bianca",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Bianca_(moon)"
@@ -447,106 +608,147 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Cressida",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Cressida_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Desdemona",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Desdemona_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Juliet",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Juliet_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Portia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Portia_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Rosalind",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
-            ],            "owl:sameAs": [
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
+            ],
+            "owl:sameAs": [
                 "http://dbpedia.org/resource/Rosalind_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
-        },                
+        },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Cupid",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Cupid_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Belinda",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Belinda_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Perdita",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Perdita_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Puck",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Puck_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Mab",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Mab_(moon)"
@@ -556,41 +758,57 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Miranda",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Miranda_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Ariel",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Ariel_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Umbriel",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Umbriel_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Uranus"
         },
-                        {
+        {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Titania",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Titania_(moon)"
@@ -600,8 +818,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Oberon",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Oberon_(moon)"
@@ -611,19 +833,31 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Neptune",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Ice_giant" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Ice_giant"
+                }
             ],
             "owl:sameAs": [
-                { "@id": "http://umbel.org/umbel/rc/PlanetNeptune" },
-                { "@id": "http://dbpedia.org/resource/Neptune" }
-            ],
+                {
+                    "@id": "http://umbel.org/umbel/rc/PlanetNeptune"
+                },
+                {
+                    "@id": "http://dbpedia.org/resource/Neptune"
+                }
+            ]
         },
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Naiad",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Naiad_(moon)"
@@ -633,8 +867,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Thalassa",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Thalassa_(moon)"
@@ -644,8 +882,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Despina",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Despina_(moon)"
@@ -655,8 +897,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Galatea",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Galatea_(moon)"
@@ -666,8 +912,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Larissa",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Larissa_(moon)"
@@ -677,8 +927,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Proteus",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Proteus_(moon)"
@@ -688,8 +942,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Triton",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Triton_(moon)"
@@ -699,8 +957,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Nereid",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Nereid_(moon)"
@@ -710,8 +972,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Halimede",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Halimede_(moon)"
@@ -721,8 +987,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Sao",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Sao_(moon)"
@@ -732,8 +1002,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Laomedeia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Laomedeia_(moon)"
@@ -743,8 +1017,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Psamathe",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Psamathe_(moon)"
@@ -754,8 +1032,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Neso",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Neso_(moon)"
@@ -765,8 +1047,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Neso",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Neso_(moon)"
@@ -790,8 +1076,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Charon",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Charon_(moon)"
@@ -801,8 +1091,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Styx",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Styx_(moon)"
@@ -812,8 +1106,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Nix",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Nix_(moon)"
@@ -823,8 +1121,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Kerberos",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Kerberos_(moon)"
@@ -834,8 +1136,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Hydra",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Hydra_(moon)"
@@ -852,8 +1158,12 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Haumea_I_and_II",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Moons_of_Haumea_(moon)"
@@ -877,11 +1187,17 @@
         {
             "@id": "http://ontology.projectchronos.eu/astronomy/Dysnomia",
             "@type": [
-                { "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody" },
-                { "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite" }
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/PlanetaryBody"
+                },
+                {
+                    "@id": "http://ontology.projectchronos.eu/astronomy/Natural_satellite"
+                }
             ],
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Dysnomia_(moon)"
             ],
             "astronomy:orbitsPlanet": "http://ontology.projectchronos.eu/astronomy/Eris"
-        },
+        }
+    ]
+}
