@@ -822,7 +822,7 @@
                 },
                 {       
                     "@id": "http://ontology.projectchronos.eu/astronomy/GasGiant"
-                },
+                }
             ],
             "owl:sameAs": [
                 {
@@ -1046,7 +1046,7 @@
         {
             "@id": "http://ontology.projectchronos.eu/solarsystem/Ceres",
             "@type": {
-                "@id": "http://ontology.projectchronos.eu/astronomy/DwarfPlanet",
+                "@id": "http://ontology.projectchronos.eu/astronomy/DwarfPlanet"
             },
             "owl:sameAs": [
                 "http://dbpedia.org/resource/Ceres_(dwarf_planet)"
