@@ -12,6 +12,8 @@
 
     "@id": "",
     "@type": "http://www.w3.org/2002/07/owl#Ontology",
+    "rdfs:label": "Classes and properties to describe space activities in Chronos Knowledge Base",
+    "rdfs:comment": "Generic classes and semantic properties",
     "defines": [
         {
             "@id": "http://ontology.projectchronos.eu/chronos/relKeyword",
