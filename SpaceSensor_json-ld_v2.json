@@ -52,7 +52,7 @@
                                         ],
                         "rdfs:comment"  : "A relation between Detector and PhysicalEntity. Detectors detect physical entities like particles, plasma, molecules, etc. For ex, spectrometers detect light. Magnetometers detect magnetic fields, which are part of the EM-field",
                         "rdf:range"     : "http://ontology.projectchronos.eu/sensors/PhysicalEntity",
-                        "rdf:label"     : "detects",
+                        "rdfs:label"     : "detects",
                         "skos:altLabel" : "to detect"
                     },
                     {
@@ -65,7 +65,7 @@
                         "rdfs:comment"  : "A relation between a Detector and a PhysicalEntity. The relation defines an \"active sensor\": if a sensor emits any particles or waves, which are backscattered and re-absorbed, then it is an \"active sensor\". The term \"emits\" implies therefore that the emitted physical entity is also reabsorbed by the same instrument. N.B. Active sensors should belong only to the family of instruments measuring properties of the electromagnetic spectrum. References for this assumption are: 1. http://www.nasa.gov/directorates/heo/scan/communications/outreach/funfacts/txt_passive_active.html#.VKA0MhAT1I; 2. http://www.seos-project.eu/modules/remotesensing/remotesensing-c02-p02.html",
                         "rdfs:domain"   : "http://ontology.projectchronos.eu/sensors/Sensor",
                         "rdfs:range"    : "http://ontology.projectchronos.eu/sensors/PhysicalEntity",
-                        "rdf:label"     : "emits",
+                        "rdfs:label"     : "emits",
                         "skos:altLabel" : "to emit"
                     },
                     {
@@ -76,7 +76,7 @@
                         "rdfs:domain"  : "http://ontology.projectchronos.eu/sensors/Sensor",
                         "rdfs:range"   : "http://ontology.projectchronos.eu/sensors/FieldOfResearch",
                         "owl:inverseOf": "http://ontology.projectchronos.eu/sensors/isResearchedBy",
-                        "rdf:label"    : "hasFieldOfResearch"
+                        "rdfs:label"    : "hasFieldOfResearch"
                     },
                     {
                         "@id"         : "http://ontology.projectchronos.eu/sensors/hasOutput",
