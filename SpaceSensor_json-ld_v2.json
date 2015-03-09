@@ -896,7 +896,8 @@
                                             "http://ontology.projectchronos.eu/sensors/isEmittedBy",
                                             "http://ontology.projectchronos.eu/sensors/isResearchedBy",
                                             "http://ontology.projectchronos.eu/sensors/measures"
-                                        ]
+                                        ],
+                        "skos:altLabel"      : "#AllDisjointsProperties",
                     }
                 ]
 }
