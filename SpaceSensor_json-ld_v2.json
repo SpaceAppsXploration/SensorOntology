@@ -71,7 +71,6 @@
                     {
                         "@id"          : "http://ontology.projectchronos.eu/sensors/hasFieldOfResearch",
                         "@type"        : "http://www.w3.org/2002/07/owl#ObjectProperty",
-                        "rdfs:label"   : "application",
                         "rdfs:comment" : "A relation between a Detector and FieldOfResearch. A detector is used for some research purpose, i.e. hasApplication in some FieldOfResearch. Examples of fields of research are: Determination of the elemental characteristics of a planet's surface; Dark Energy; Climate Change monitoring, etc...",
                         "rdfs:domain"  : "http://ontology.projectchronos.eu/sensors/Sensor",
                         "rdfs:range"   : "http://ontology.projectchronos.eu/sensors/FieldOfResearch",
@@ -553,7 +552,7 @@
                         "@id"             : "http://ontology.projectchronos.eu/sensors/MagneticFieldStrength",
                         "@type"           : "http://www.w3.org/2002/07/owl#Class",
                         "rdfs:subClassOf" : "http://ontology.projectchronos.eu/sensors/PhysicalQuantity",
-                        "rdfs:labela"     : "MagneticFieldStrength"
+                        "rdfs:label"     : "MagneticFieldStrength"
                     },
                     {
                         "@id"             : "http://ontology.projectchronos.eu/sensors/Magnetometer",
