@@ -98,8 +98,8 @@
                     "owl:minCardinality" : 1
                 }
             ],
-            "rdfs:label": "The set of the detectors and their supporting devices.",
-            "rdfs:comment": "The set of devices that the spacecraft carries for scientific purposes.",
+            "rdfs:label": "Payload_Spacecraft",
+            "rdfs:comment": "The set of devices that the spacecraft carries for scientific purposes, with their supporting (readout) devices.",
             "skos:prefLabel": "Payload_Spacecraft",
             "spacecraft:isComponent": "http://ontology.projectchronos.eu/spacecraft/Spacecraft"
         },
@@ -117,8 +117,8 @@
                 "http://ontology.projectchronos.eu/sensors/Detector"
             ],
             "rdfs:comment" : "It is a payload",
-            "rdfs:label" : "a subsystem that holds a sensor",
-            "skos:prefLabel" : "embedSensor",
+            "rdfs:label" : "embedSensor", 
+            "skos:prefLabel" : "a subsystem that holds a sensor",
             "skos:altLabel" : "holds a sensor"
         },
         {
@@ -130,8 +130,8 @@
             "rdf:range": [
 
             ],
-            "rdfs:label": "the environment in which a device or a system of devices is designed to work",
-            "skos:prefLabel": "isDeployedIn"
+            "rdfs:label": "isDeployedIn",
+            "skos:prefLabel": "the environment in which a device or a system of devices is designed to work"
         }
 
 ]

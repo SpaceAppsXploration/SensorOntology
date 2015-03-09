@@ -55,14 +55,17 @@
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "rdfs:label": "A property that references the subsystem to the kind of the devices it holds.",
             "rdfs:comment": "Every subsystem contains an homogeneous group of devices.",
-            "skos:prefLabel": "subSystemType"
+            "skos:prefLabel": "subSystemType",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/isStandard",
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "rdfs:label": "A property that references the standard platform for which the subsystem has been designed.",
             "rdfs:comment": "There are many different standards that imply quantitative and qualitative differences",
-            "skos:prefLabel": "isStandard"
+            "skos:prefLabel": "isStandard",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
+
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasVolume",
@@ -72,7 +75,8 @@
                 { "@id": "http://umbel.org/umbel/rc/Volume" }, 
                 { "@id": "http://dbpedia.org/resource/Volume" }
             ],
-            "skos:prefLabel": "hasVolume"
+            "skos:prefLabel": "hasVolume",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasMinAmpere",
@@ -82,7 +86,8 @@
                 { "@id": "http://umbel.org/umbel/rc/Ampere" }, 
                 { "@id": "http://dbpedia.org/resource/Ampere" }
             ],
-            "skos:prefLabel": "hasMinAmpere"
+            "skos:prefLabel": "hasMinAmpere",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasMaxAmpere",
@@ -92,7 +97,8 @@
                 { "@id": "http://umbel.org/umbel/rc/Ampere" }, 
                 { "@id": "http://dbpedia.org/resource/Ampere" }
             ],
-            "skos:prefLabel": "hasMaxAmpere"
+            "skos:prefLabel": "hasMaxAmpere",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasMass",
@@ -103,7 +109,8 @@
                 { "@id": "http://dbpedia.org/resource/Mass" }, 
                 { "@id": "http://schema.org/Mass" }
             ],
-            "skos:prefLabel": "hasMass"
+            "skos:prefLabel": "hasMass",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasPower",
@@ -113,14 +120,16 @@
                 { "@id": "http://umbel.org/umbel/rc/Power" }, 
                 { "@id": "http://dbpedia.org/resource/Power_(physics)"}
             ],
-            "skos:prefLabel": "hasPower"
+            "skos:prefLabel": "hasPower",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasSpecificImpulse",
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "rdf:range" : { "@id": "http://www.w3.org/2001/XMLSchema#float" },
             "skos:exactMatch": { "@id": "http://dbpedia.org/resource/Specific_impulse" },
-            "skos:prefLabel": "hasSpecificImpulse"
+            "skos:prefLabel": "hasSpecificImpulse",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasMonetaryValue",
@@ -132,27 +141,31 @@
                 { "@id": "http://schema.org/PriceSpecification" }
             ],
             "skos:prefLabel": "hasMonetaryValue",
-            "rdfs:comment": "Amount of money it can be bought for, or an esteem of value."
+            "rdfs:comment": "Amount of money it can be bought for, or an esteem of value.",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith",
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "rdf:range" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "skos:prefLabel": "hasWireInWith",
-            "rdfs:comment": "This device receive input from another device"
+            "rdfs:comment": "This device receive input from another device",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/hasWireOutWith",
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "rdf:range" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
             "skos:prefLabel": "hasWireOutWith",
-            "rdfs:comment": "This device send output to another device"
+            "rdfs:comment": "This device send output to another device",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/typeOfPropellant",
             "rdf:domain" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft_Propulsion" },
             "skos:prefLabel": "typeOfPropellant",
-            "rdfs:comment": "Type of fueling used by a spacecraft rocket engine"
+            "rdfs:comment": "Type of fueling used by a spacecraft rocket engine",
+            "@type" : { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
         },
         {
             "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
