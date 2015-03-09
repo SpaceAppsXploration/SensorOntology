@@ -13,6 +13,8 @@
 
     "@id": "",
     "@type": "http://www.w3.org/2002/07/owl#Ontology",
+    "rdfs:label": "Generic engineering concepts ",
+    "rdfs:comment": "a set of concepts to be used to describe engineering objects",
 
     "defines": [
         {

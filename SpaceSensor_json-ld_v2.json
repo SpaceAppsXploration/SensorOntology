@@ -10,6 +10,8 @@
 
     "@id"    : "",
     "@type"  : "http://www.w3.org/2002/07/owl#Ontology",
+    "rdfs:label": "An ontology of sensors, to describe how they work",
+    "rdfs:comment": "a set of concepts to be used to describe sensors",
     "defines": [
                     {
                         "@id"             : "http://ontology.projectchronos.eu/sensors/Sensor",
