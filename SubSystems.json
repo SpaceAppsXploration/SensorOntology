@@ -19,7 +19,8 @@
            "@id" : "http://ontology.projectchronos.eu/subsystems/manufacturer",
            "@type" : [
                 { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" }
-           ]
+           ],
+           "skos:prefLabel": "manufacturer"
          },
          {
             "@id" : "http://ontology.projectchronos.eu/subsystems/function",
@@ -212,9 +213,9 @@
                     "owl:minCardinality" : 1
                 }
             ],
-            "rdfs:label": "A space detector is a sensor supported by another device that let it collect data, that is deployed into a spacecraft and works outside Earth lower atmosphere",
-            "rdfs:comment": "Any scientific instrument carried by a space probe or an artificial satellite",
-            "skos:prefLabel": "Spacecraft_Detector",
+            "rdfs:label": "Spacecraft_Detector",
+            "rdfs:comment": "A space detector is a sensor supported by another device that let it collect data, that is deployed into a spacecraft and works outside Earth lower atmosphere",
+            "skos:prefLabel": "Any scientific instrument carried by a space probe or an artificial satellite",
             "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft"
         },
         {
