@@ -7,7 +7,7 @@
     },
     {
         "@id": "http://api.pramantha.net/data/sensors/CHIVA-P",
-        "subsystems:manufacturer": "ESA",
+        "subsystems:manufacturer": "http://api.pramantha.net/data/dbpediadocs/European_Space_Agency",
         "name": "CHIVA-P",
         "full name": "ÇIVA-P",
         "chronos:relMission": "http://api.pramantha.net/data/mission/Rosetta_(spacecraft)",
@@ -23,7 +23,7 @@
     },
     {
         "@id": "http://api.pramantha.net/data/sensors/CHIVA-M",
-        "manufactoring": "ESA",
+        "manufactoring": "http://api.pramantha.net/data/dbpediadocs/European_Space_Agency",
         "name": "CHIVA-M",
         "full name": "çiva-M",
         "chronos:relMission": "http://api.pramantha.net/data/mission/Rosetta_(spacecraft)",
@@ -40,7 +40,7 @@
     },
     {
         "@id": "http://api.pramantha.net/data/sensors/CHIVA-M",
-        "subsystems:manufacturer": "ESA",
+        "subsystems:manufacturer": "http://api.pramantha.net/data/dbpediadocs/European_Space_Agency",
         "name": "CHIVA-M",
         "full name": "çiva-M",
         "chronos:relMission": "http://api.pramantha.net/data/mission/Rosetta_(spacecraft)",
@@ -56,7 +56,7 @@
     },
     {
         "@id": "http://api.pramantha.net/data/sensors/LORRI",
-        "subsystems:manufacturer": "NASA",
+        "subsystems:manufacturer": "http://api.pramantha.net/data/dbpediadocs/NASA",
         "name": "LORRI",
         "full name": "LORRI",
         "chronos:relMission": "http://api.pramantha.net/data/mission/New_Horizons",
@@ -71,7 +71,7 @@
     },
     {
         "@id": "http://api.pramantha.net/data/sensors/REX",
-        "subsystems:manufacturer": "NASA",
+        "subsystems:manufacturer": "http://api.pramantha.net/data/dbpediadocs/NASA",
         "name": "REX",
         "full name": "REX",
         "chronos:relMission": "http://api.pramantha.net/data/mission/New_Horizons",
@@ -88,7 +88,7 @@
     {
         "@id": "http://api.pramantha.net/data/sensors/SMAP-radiometer",
         "chronos:relMission": "http://api.pramantha.net/data/mission/Soil_Moisture_Active_Passive",
-        "manufactoring": "NASA",
+        "manufactoring": "http://api.pramantha.net/data/dbpediadocs/NASA",
         "name": "SMAP-radiometer",
         "full name": "SMAP-radiometer",
         "@type": "sensor:Radiometer",
@@ -129,7 +129,7 @@
     {
         "@id": "http://api.pramantha.net/data/sensors/MMS-payload",
         "chronos:relMission": "http://api.pramantha.net/data/mission/Magnetospheric_Multiscale_Mission",
-        "subsystems:manufacturer": "NASA",
+        "subsystems:manufacturer": "http://api.pramantha.net/data/dbpediadocs/NASA",
         "name": "MMS-detectors",
         "chronos:relMission": "Magnetospheric_Multiscale_Mission",
         "@type": "sensor:Sensor"
